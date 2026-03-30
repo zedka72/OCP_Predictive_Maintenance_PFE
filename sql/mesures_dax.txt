@@ -1,0 +1,154 @@
+-- ==========================================================
+-- dax_measures_FR_v2.txt — Mesures DAX corrigées
+-- Noms de tables PostgreSQL avec préfixe "public "
+-- Syntaxe française (point-virgule ;)
+-- ==========================================================
+
+-- ═══════════════════════════════════════════════════════════
+-- PAGE 1 — KPIs GLOBAUX
+-- Sélectionner la table 'public predictions' avant de créer
+-- ═══════════════════════════════════════════════════════════
+
+Total Machines =
+COUNTROWS('public predictions')
+
+Machines High Risk =
+CALCULATE(
+    COUNTROWS('public predictions');
+    'public predictions'[risk_level] = "High"
+)
+
+Machines Medium Risk =
+CALCULATE(
+    COUNTROWS('public predictions');
+    'public predictions'[risk_level] = "Medium"
+)
+
+Machines Low Risk =
+CALCULATE(
+    COUNTROWS('public predictions');
+    'public predictions'[risk_level] = "Low"
+)
+
+Pct High Risk =
+DIVIDE([Machines High Risk]; [Total Machines]; 0) * 100
+
+Pct Medium Risk =
+DIVIDE([Machines Medium Risk]; [Total Machines]; 0) * 100
+
+Pct Low Risk =
+DIVIDE([Machines Low Risk]; [Total Machines]; 0) * 100
+
+Taux Panne Reel =
+DIVIDE(
+    CALCULATE(
+        COUNTROWS('public predictions');
+        'public predictions'[actual_failure] = 1
+    );
+    COUNTROWS('public predictions');
+    0
+) * 100
+
+Risk Score Moyen =
+AVERAGE('public predictions'[risk_score])
+
+Risk Score Max =
+MAX('public predictions'[risk_score])
+
+
+-- ═══════════════════════════════════════════════════════════
+-- PAGE 3 — PERFORMANCE MODÈLE
+-- Sélectionner la table 'public model_runs' avant de créer
+-- ═══════════════════════════════════════════════════════════
+
+ROC AUC Dernier Run =
+CALCULATE(
+    MAX('public model_runs'[roc_auc]);
+    TOPN(1; 'public model_runs'; 'public model_runs'[run_date]; DESC)
+)
+
+F1 Score Dernier Run =
+CALCULATE(
+    MAX('public model_runs'[f1_score]);
+    TOPN(1; 'public model_runs'; 'public model_runs'[run_date]; DESC)
+)
+
+Recall Dernier Run =
+CALCULATE(
+    MAX('public model_runs'[recall]);
+    TOPN(1; 'public model_runs'; 'public model_runs'[run_date]; DESC)
+)
+
+
+-- ═══════════════════════════════════════════════════════════
+-- PAGE 3 — MATRICE DE CONFUSION
+-- ═══════════════════════════════════════════════════════════
+
+Vrais Positifs =
+CALCULATE(
+    COUNTROWS('public predictions');
+    'public predictions'[risk_level] = "High";
+    'public predictions'[actual_failure] = 1
+)
+
+Faux Positifs =
+CALCULATE(
+    COUNTROWS('public predictions');
+    'public predictions'[risk_level] = "High";
+    'public predictions'[actual_failure] = 0
+)
+
+Vrais Negatifs =
+CALCULATE(
+    COUNTROWS('public predictions');
+    'public predictions'[risk_level] = "Low";
+    'public predictions'[actual_failure] = 0
+)
+
+Faux Negatifs =
+CALCULATE(
+    COUNTROWS('public predictions');
+    'public predictions'[risk_level] <> "High";
+    'public predictions'[actual_failure] = 1
+)
+
+Taux Faux Positifs =
+DIVIDE([Faux Positifs]; [Faux Positifs] + [Vrais Negatifs]; 0) * 100
+
+Taux Faux Negatifs =
+DIVIDE([Faux Negatifs]; [Faux Negatifs] + [Vrais Positifs]; 0) * 100
+
+
+-- ═══════════════════════════════════════════════════════════
+-- PAGE 3 — QUALITÉ DONNÉES
+-- ═══════════════════════════════════════════════════════════
+
+Usure Outil Moyenne =
+AVERAGE('public raw_sensor_readings'[tool_wear_min])
+
+Pct Usure Critique =
+DIVIDE(
+    CALCULATE(
+        COUNTROWS('public raw_sensor_readings');
+        'public raw_sensor_readings'[tool_wear_min] > 200
+    );
+    COUNTROWS('public raw_sensor_readings');
+    0
+) * 100
+
+Temp Diff Moyenne =
+AVERAGE('public cleaned_sensor_readings'[temp_diff])
+
+
+-- ═══════════════════════════════════════════════════════════
+-- COLONNE CALCULÉE
+-- Modélisation → Nouvelle colonne (dans 'public predictions')
+-- ═══════════════════════════════════════════════════════════
+
+Risk Score Bin =
+SWITCH(
+    TRUE();
+    'public predictions'[risk_score] < 0.30; "Low (< 0.30)";
+    'public predictions'[risk_score] < 0.60; "Medium (0.30-0.60)";
+    "High (>= 0.60)"
+)

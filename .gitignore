@@ -1,0 +1,27 @@
+# Python Virtual Environment
+.venv/
+venv/
+env/
+
+# Fichiers de cache Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Archives & gros fichiers téléchargés
+*.zip
+archive_extracted/
+
+# Fichiers de configuration locaux (mots de passe)
+.env
+
+# Logs
+logs/
+*.log
+
+# Caches éditeurs (VS Code)
+.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini
