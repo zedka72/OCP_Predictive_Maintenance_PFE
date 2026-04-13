@@ -238,7 +238,7 @@ Les enjeux identifiés sont :
     \item Réduction des coûts opérationnels de 10-15\% estimés
 \end{itemize}
 
-\chapter{\'Etude de l'existant et analyse des besoins}
+\chapter{Étude de l'existant et analyse des besoins}
 
 \section{Situation actuelle de la maintenance}
 
@@ -247,8 +247,8 @@ Les enjeux identifiés sont :
 La maintenance corrective intervient après l'occurrence d'une défaillance. Lorsqu'une machine s'arrête, une équipe de techniciens est mobilisée en urgence pour diagnostiquer et réparer le problème. Cette approche entraîne :
 
 \begin{itemize}
-    \item \textbf{Co\^uts importants} : Mobilisation d'équipes de nuit/week-end, surtemps, urgences d'approvisionnement
-    \item \textbf{Impact production} : Arr\^et non planifié de la chaîne de production, non-respect des livraisons
+    \item \textbf{Coûts importants} : Mobilisation d'équipes de nuit/week-end, surtemps, urgences d'approvisionnement
+    \item \textbf{Impact production} : Arrêt non planifié de la chaîne de production, non-respect des livraisons
     \item \textbf{Seconde dégradation} : La défaillance d'une machine peut causer des dégradations en cascade
 \end{itemize}
 
@@ -257,7 +257,7 @@ La maintenance corrective intervient après l'occurrence d'une défaillance. Lor
 La maintenance préventive repose sur un calendrier préétabli : changement d'huile tous les X heures, inspection tous les Y mois, etc. Bien que réduisant le risque de panne, cette approche souffre de deux limitations :
 
 \begin{itemize}
-    \item \textbf{Interventions inutiles} : L'équipement peut \^etre en bon état, mais l'intervention est quand m\^eme réalisée
+    \item \textbf{Interventions inutiles} : L'équipement peut être en bon état, mais l'intervention est quand même réalisée
     \item \textbf{Manque d'adaptativité} : Les calendriers ne s'adaptent pas aux conditions réelles d'opération (intensité d'utilisation, environnement)
 \end{itemize}
 
@@ -265,7 +265,7 @@ La maintenance préventive repose sur un calendrier préétabli : changement d'h
 
 \subsection{Absence d'exploitation des données capteurs}
 
-Le site de Safi dispose d'un réseau capteurs étendu mais ces données sont actuellement collectées dans une base de données sans analyse prédictive. Les signaux de dégradation progressive sont ignorés, m\^eme lorsqu'ils auraient pu permettre une intervention anticipée.
+Le site de Safi dispose d'un réseau capteurs étendu mais ces données sont actuellement collectées dans une base de données sans analyse prédictive. Les signaux de dégradation progressive sont ignorés, même lorsqu'ils auraient pu permettre une intervention anticipée.
 
 \subsection{Manque de visibilité décisionnelle}
 
@@ -291,7 +291,7 @@ Seuils statistiques (contrôle qualité) & Basse & Moyenne & Excellente \\
 \hline
 Régression logistique & Moyenne & Bonne & Excellente \\
 \hline
-Random Forest / XGBoost & Moyenne-\'Elevée & Excellent & Bonne \\
+Random Forest / XGBoost & Moyenne-Élevée & Excellent & Bonne \\
 \hline
 Réseaux de neurones (Deep Learning) & Très élevée & Excellent & Faible \\
 \hline
@@ -316,7 +316,7 @@ Construire un système automatisé d'extraction, transformation et chargement (E
 
 \subsection{Objectif 2 : Modèle ML performant}
 
-Entra\^{\i}ner un modèle de Machine Learning capable de :
+Entraîner un modèle de Machine Learning capable de :
 \begin{itemize}
     \item Prédire le risque de panne avec une précision minimale de ROC-AUC > 0.95
     \item Classifier les risques en trois niveaux (Low, Medium, High)
@@ -395,7 +395,7 @@ Plateforme exécution & Windows 10/11 (PowerShell) \\
     \item \textbf{Confidentialité} : Le dataset réel d'OCP étant confidentiel, l'utilisation du dataset public AI4I 2020 est une contrainte projet
     \item \textbf{Infrastructure} : Pas de serveur dédié disponible, exécution sur machine locale
     \item \textbf{Timeframe} : Projet de fin d'études avec durée fixe (6-7 mois)
-    \item \textbf{Compétences} : \'Equipe composée d'étudiants (pas de data engineers expérimentés)
+    \item \textbf{Compétences} : Équipe composée d'étudiants (pas de data engineers expérimentés)
 \end{itemize}
 
 \chapter{Solution proposée et choix technologiques}
@@ -436,9 +436,9 @@ Dashboard 3 pages interactif
 Python 3.11 a été choisi comme langage principal de développement pour plusieurs raisons :
 
 \begin{itemize}
-    \item \textbf{\'Ecosystème mature} : Les bibliothèques pandas, NumPy, Scikit-learn et XGBoost offrent des outils de classe mondiale pour le ML
+    \item \textbf{Écosystème mature} : Les bibliothèques pandas, NumPy, Scikit-learn et XGBoost offrent des outils de classe mondiale pour le ML
     \item \textbf{Communauté} : Large communauté de data scientists avec abondance d'exemples, tutoriels, et bonnes pratiques
-    \item \textbf{Rapidité développement} : Syntaxe intuitive et dynamique permettant une imp\'lémentation rapide
+    \item \textbf{Rapidité développement} : Syntaxe intuitive et dynamique permettant une implémentation rapide
     \item \textbf{Performance} : Extensions Cython et numériques (NumPy) offrent des performances suffisantes pour ce volumétrie
     \item \textbf{Portabilité} : Fonctionne sur Windows, Linux, macOS sans modification
 \end{itemize}
@@ -453,7 +453,7 @@ XGBoost implémente l'algorithme du Gradient Boosting, qui construit séquentiel
 
 $$L = \sum_{i=1}^{n} l(y_i, \hat{y}_i) + \sum_{k=1}^{m} \Omega(f_k)$$
 
-o\`u $l$ est la fonction de perte, $\Omega$ est le terme de régularisation (L1/L2), $m$ est le nombre d'arbres, et $y_i$, $\hat{y}_i$ sont les vraies et prédites valeurs.
+où $l$ est la fonction de perte, $\Omega$ est le terme de régularisation (L1/L2), $m$ est le nombre d'arbres, et $y_i$, $\hat{y}_i$ sont les vraies et prédites valeurs.
 
 \subsubsection{Avantages pratiques}
 
@@ -470,9 +470,9 @@ o\`u $l$ est la fonction de perte, $\Omega$ est le terme de régularisation (L1/
 PostgreSQL 16 a été sélectionné comme SGBD pour :
 
 \begin{itemize}
-    \item \textbf{Robustesse} : Base de données open-source extr\^emement stable, utilisée en production par Fortune 500
+    \item \textbf{Robustesse} : Base de données open-source extrêmement stable, utilisée en production par Fortune 500
     \item \textbf{Caractéristiques avancées} : Types de données avancés (JSON, UUID), vues matérialisees, foreign keys
-    \item \textbf{Performance} : Optimiser élab\'orée, indexation B-tree, support des parallélisation de requêtes
+    \item \textbf{Performance} : Optimisation élaboréeée, indexation B-tree, support des parallélisation de requêtes
     \item \textbf{Sécurité} : Rôles granulaires, authentification, encryption native
     \item \textbf{Coûts} : Open-source, aucune licence, déploiement flexible
 \end{itemize}
@@ -486,7 +486,7 @@ Power BI Desktop a été choisi pour la visualisation car :
     \item \textbf{DAX avancé} : Langage de formule DAX permettant des calculs métier complexes
     \item \textbf{Visuels interactifs} : Graphiques, cartes, tableaux avec drill-down, filtres croisés
     \item \textbf{Collaboration} : Publication cloud (Power BI Service) pour partage avec stakeholders
-    \item \textbf{Adoption} : TR\`ES large adoption en entreprise, formation déjà disponible en interne
+    \item \textbf{Adoption} : TRÈS large adoption en entreprise, formation déjà disponible en interne
 \end{itemize}
 
 \section{Justification comparative}
@@ -509,7 +509,7 @@ Gestion déséquil. & Native & Manuelle & Native & Manuelle \\
 \hline
 Scalabilité & Excellent & Bon & Excellent & Moyen \\
 \hline
-Temps entra\^{\i}n. & Moyen & Rapide & Très rapide & Lent \\
+Temps entraîn. & Moyen & Rapide & Très rapide & Lent \\
 \hline
 \end{tabular}
 \end{table}
@@ -522,7 +522,7 @@ XGBoost offre le meilleur compromis entre performance et interprétabilité.
 
 \section{Environnement de développement}
 
-\subsection{Configuration ma\^{\i}tre de l'environnement}
+\subsection{Configuration maître de l'environnement}
 
 L'environnement de développement a été configuré sur un ordinateur Windows 11 avec :
 
@@ -738,7 +738,7 @@ data['type_encoded'] = data['type'].map(type_mapping)
 
 Ces features capturent des phénomènes physiques importants :
 \begin{itemize}
-    \item \texttt{temp\_diff} : \'Ecart thermique lié aux conditions d'opération
+    \item \texttt{temp\_diff} : Écart thermique lié aux conditions d'opération
     \item \texttt{power} : Puissance mécanique corrélée aux contraintes matérielles
     \item \texttt{type\_encoded} : Catégorisation par intensité d'utilisation
 \end{itemize}
@@ -795,7 +795,7 @@ joblib.dump(scaler, 'modeles/normaliseur.joblib')
 
 \subsection{Modèle de référence : Régression Logistique}
 
-Un modèle de baseline est entra\^{\i}né pour comparaison :
+Un modèle de baseline est entraîné pour comparaison :
 
 \begin{lstlisting}[language=Python]
 from sklearn.linear_model import LogisticRegression
@@ -827,7 +827,7 @@ Résultats de baseline :
 
 \subsection{Modèle principal : XGBoost}
 
-Le modèle XGBoost principal est entra\^{\i}né avec hyperparamètres optimisés :
+Le modèle XGBoost principal est entraîné avec hyperparamètres optimisés :
 
 \begin{lstlisting}[language=Python]
 from xgboost import XGBClassifier
@@ -1035,7 +1035,7 @@ Score maximum & 0.9987 & Machine quasi-certaine panne \\
 \hline
 Moyenne & 0.0339 & Aligné avec taux panne (3.39\%) \\
 \hline
-\'Ecart-type & 0.0956 & Dispersion significative \\
+Écart-type & 0.0956 & Dispersion significative \\
 \hline
 \end{tabular}
 \end{table}
