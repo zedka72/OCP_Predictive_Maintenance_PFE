@@ -89,31 +89,31 @@
 \vfill
 \begin{center}
     \hrulefill\par
-    \LARGE Mise en \oe{}uvre d'un syst\`eme de Maintenance Pr\'edictive\par
-    \large bas\'e sur le Machine Learning et la Business Intelligence\par
-    Application \`a l'OCP Safi\par
+    \LARGE Mise en œuvre d'un système de Maintenance Prédictive\par
+    \large basé sur le Machine Learning et la Business Intelligence\par
+    Application à l'OCP Safi\par
     \hrulefill\par
 \end{center}
 
 \vfill
 \begin{flushright}
-\textbf{Encadrant acad\'emique :}\par
-[NOM DU PROFESSEUR]\par
+\textbf{Encadrant académique :}\par
+    [NOM DU PROFESSEUR]\par
 
-\vspace{0.5cm}
-\textbf{Encadrant industriel :}\par
-[NOM DE L'ENCADRANT OCP]\par
+    \vspace{0.5cm}
+    \textbf{Encadrant industriel :}\par
+    [NOM DE L'ENCADRANT OCP]\par
 
-\vspace{0.5cm}
-\textbf{Membres du jury :}\par
-[JURY MEMBER 1]\par
-[JURY MEMBER 2]\par
-[JURY MEMBER 3]\par
+    \vspace{0.5cm}
+    \textbf{Membres du jury :}\par
+    [JURY MEMBER 1]\par
+    [JURY MEMBER 2]\par
+    [JURY MEMBER 3]\par
 \end{flushright}
 
 \vfill
 \begin{center}
-    Ann\'ee Universitaire 2025 / 2026
+    Année Universitaire 2025 / 2026
 \end{center}
 
 \end{titlepage}
@@ -121,12 +121,12 @@
 \newpage
 \thispagestyle{empty}
 \begin{center}
-\Large\textbf{D\'edicace}
+\Large\textbf{Dédicace}
 \end{center}
 
 \vspace{2cm}
 
-Nous d\'edions ce m\'emoire de Projet de Fin d'\'Etudes \`a nos familles pour leur soutien continu tout au long de notre formation acad\'emique. Nous le d\'edions \'egalement \`a nos encadrants pour leur guid\'ee dans la r\'ealisation de ce projet ambitieux au carrefour de la science des donn\'ees et de la gouvernance IT.
+Nous dédions ce mémoire de Projet de Fin d'Études à nos familles pour leur soutien continu tout au long de notre formation académique. Nous le dédions également à nos encadrants pour leur guidée dans la réalisation de ce projet ambitieux au carrefour de la science des données et de la gouvernance IT.
 
 \newpage
 \thispagestyle{empty}
@@ -136,106 +136,106 @@ Nous d\'edions ce m\'emoire de Projet de Fin d'\'Etudes \`a nos familles pour le
 
 \vspace{2cm}
 
-Nous tenons \`a exprimer nos sinc\`eres remerciements \`a [NOM DU PROFESSEUR], notre encadrant acad\'emique, pour son accompagnement m\'ethodique tout au long du d\'eveloppement de ce projet. Nous remercions \'egalement [NOM DE L'ENCADRANT OCP] pour nous avoir fourni le contexte industriel r\'ealiste et les donn\'ees essentielles pour la r\'ealisation de ce travail. Merci enfin \`a tous les membres du jury pour avoir accept\'e d'\'evaluer nos efforts et nos contributions dans le domaine de la Maintenance Pr\'edictive et de l'Intelligence Artificielle appliqu\'ee \`a l'industrie.
+Nous tenons à exprimer nos sincères remerciements à [NOM DU PROFESSEUR], notre encadrant académique, pour son accompagnement méthodique tout au long du développement de ce projet. Nous remercions également [NOM DE L'ENCADRANT OCP] pour nous avoir fourni le contexte industriel réaliste et les données essentielles pour la réalisation de ce travail. Merci enfin à tous les membres du jury pour avoir accepté d'évaluer nos efforts et nos contributions dans le domaine de la Maintenance Prédictive et de l'Intelligence Artificielle appliquée à l'industrie.
 
 \newpage
 \tableofcontents
 
 \newpage
-\chapter*{Introduction g\'en\'erale}
+\chapter*{Introduction générale}
 \thispagestyle{plain}
 
 \section*{Contexte et enjeux de la digitalisation industrielle}
 
-L'industrie manufacturière mondiale connaît une transformation profonde et accél\'erée, souvent qualifi\'ee d'Industrie 4.0. Cette r\'evolution num\'erique est caract\'eris\'ee par l'int\'egration croissante de technologies avanc\'ees telles que l'Internet des Objets (IoT), le Big Data, le cloud computing et l'intelligence artificielle dans les processus de production. Cette convergence technologique ouvre des opportunit\'es sans pr\'ec\'edent pour optimiser les op\'erations industrielles, r\'eduire les co\^uts d'exploitation et am\'eliorer la qualit\'e des produits.
+L'industrie manufacturière mondiale connaît une transformation profonde et accélérée, souvent qualifiée d'Industrie 4.0. Cette révolution numérique est caractérisée par l'intégration croissante de technologies avancées telles que l'Internet des Objets (IoT), le Big Data, le cloud computing et l'intelligence artificielle dans les processus de production. Cette convergence technologique ouvre des opportunités sans précédent pour optimiser les opérations industrielles, réduire les coûts d'exploitation et améliorer la qualité des produits.
 
-Dans ce contexte de transformation num\'erique, la maintenance industrielle occupe une place centrale. Traditionnellement, les organisations recourent \`a deux approches principales de maintenance : la maintenance corrective (intervention apr\`es d\'efaillance) et la maintenance pr\'eventive (entretien planifi\'e selon un calendrier fixe). Ces deux approches pr\'esentent des limitations majeures. La maintenance corrective expose l'entreprise \`a des arr\^ets inattendus coûteux et impactant la disponibilit\'e de la production. La maintenance pr\'eventive, bien que r\'eductrice du risque, entra\^{\i}ne souvent des interventions inutiles, mobilisant des ressources humaines et mat\'erielles sans justification r\'eelle.
+Dans ce contexte de transformation numérique, la maintenance industrielle occupe une place centrale. Traditionnellement, les organisations recourent à deux approches principales de maintenance : la maintenance corrective (intervention après défaillance) et la maintenance préventive (entretien planifié selon un calendrier fixe). Ces deux approches présentent des limitations majeures. La maintenance corrective expose l'entreprise à des arrêts inattendus coûteux et impactant la disponibilité de la production. La maintenance préventive, bien que réductrice du risque, entraîne souvent des interventions inutiles, mobilisant des ressources humaines et matérielles sans justification réelle.
 
-\section*{Le groupe OCP et l'importance strat\'egique du site de Safi}
+\section*{Le groupe OCP et l'importance stratégique du site de Safi}
 
-L'Office Ch\'erifien des Phosphates (OCP) est l'une des plus grandes entreprises du Maroc et le leader mondial incontournable en mati\`ere d'extraction, de transformation et d'exportation de phosphate. Fond\'ee en 1920, l'entreprise a progressivement diversifi\'e son portefeuille pour devenir un acteur majeur de la production d'engrais phosphat\'es et de sp\'ecialit\'es chimiques.
+L'Office Chérifien des Phosphates (OCP) est l'une des plus grandes entreprises du Maroc et le leader mondial incontournable en matière d'extraction, de transformation et d'exportation de phosphate. Fondée en 1920, l'entreprise a progressivement diversifié son portefeuille pour devenir un acteur majeur de la production d'engrais phosphatés et de spécialités chimiques.
 
-Le site industriel de Safi, l'une des plus grandes usines du groupe, repr\'esente un p\^ole strat\'egique dans la cha\^{\i}ne de valeur de l'OCP. Ses installations hautement techniques fonctionnent en continu, avec des machines complexes et co\^uteuses qui constituent des actifs critiques pour la production. La continuit\'e de service de Safi est donc enjeu capital pour le groupe, et les arr\^ets non planifi\'es g\'en\`erent des pertes financi\`eres consid\'erables, sans compter l'impact sur les d\'elais de livraison aux clients.
+Le site industriel de Safi, l'une des plus grandes usines du groupe, représente un pôle stratégique dans la chaîne de valeur de l'OCP. Ses installations hautement techniques fonctionnent en continu, avec des machines complexes et coûteuses qui constituent des actifs critiques pour la production. La continuité de service de Safi est donc enjeu capital pour le groupe, et les arrêts non planifiés génèrent des pertes financières considérables, sans compter l'impact sur les délais de livraison aux clients.
 
-\section*{Probl\'ematique et objectifs du projet}
+\section*{Problématique et objectifs du projet}
 
-Face \`a ces enjeux strat\'egiques, \'emerge une troisi\`eme approche de maintenance : la \textbf{Maintenance Pr\'edictive}, fond\'ee sur l'analyse intelligente en temps quasi-r\'eel des donn\'ees capteurs. Plutôt que d'attendre une panne (maintenance corrective) ou d'effectuer un entretien planifi\'e (maintenance pr\'eventive), la maintenance pr\'edictive pr\'edit le risque imminent de d\'efaillance et permet de planifier les interventions au moment optimal.
+Face à ces enjeux stratégiques, émerge une troisième approche de maintenance : la \textbf{Maintenance Prédictive}, fondée sur l'analyse intelligente en temps quasi-réel des données capteurs. Plutôt que d'attendre une panne (maintenance corrective) ou d'effectuer un entretien planifié (maintenance préventive), la maintenance prédictive prédit le risque imminent de défaillance et permet de planifier les interventions au moment optimal.
 
-Ce projet de fin d'\'etudes vise \`a concevoir et implémenter une solution complète de Maintenance Pr\'edictive pour le site de Safi, articul\'ee autour de trois piliers technologiques :
+Ce projet de fin d'études vise à concevoir et implémenter une solution complète de Maintenance Prédictive pour le site de Safi, articulée autour de trois piliers technologiques :
 
 \begin{enumerate}
-    \item \textbf{Pipeline Machine Learning} : Construire un syst\`eme automatis\'e d'apprentissage automatique capable de classifier le risque de panne en trois niveaux (Low, Medium, High).
-    \item \textbf{Infrastructure de Donn\'ees} : Mettre en place une architecture PostgreSQL robuste et optimis\'ee pour la pers\'istence et l'interrogation des donn\'ees.
-    \item \textbf{Business Intelligence et Gouvernance} : D\'eveloper un tableau de bord Power BI interactif fournissant une vision actionnable aux d\'ecideurs et op\'erateurs de maintenance.
+    \item \textbf{Pipeline Machine Learning} : Construire un système automatisé d'apprentissage automatique capable de classifier le risque de panne en trois niveaux (Low, Medium, High).
+    \item \textbf{Infrastructure de Données} : Mettre en place une architecture PostgreSQL robuste et optimisée pour la persistance et l'interrogation des données.
+    \item \textbf{Business Intelligence et Gouvernance} : Développer un tableau de bord Power BI interactif fournissant une vision actionnable aux décideurs et opérateurs de maintenance.
 \end{enumerate}
 
 \section*{Structure du rapport}
 
-Ce m\'emoire est structur\'e en sept chapitres majeurs :
+Ce mémoire est structuré en sept chapitres majeurs :
 
 \begin{itemize}
-    \item \textbf{Chapitre 1} : Pr\'esentation de l'organisme d'accueil (OCP Safi)
-    \item \textbf{Chapitre 2} : \'Etude de l'existant et analyse des besoins
-    \item \textbf{Chapitre 3} : Cahier des charges et sp\'ecifications
-    \item \textbf{Chapitre 4} : Solution propos\'ee et choix technologiques
-    \item \textbf{Chapitre 5} : R\'ealisation et d\'eveloppement (cœur technique du projet)
-    \item \textbf{Chapitre 6} : Tests, validation et r\'esultats
+    \item \textbf{Chapitre 1} : Présentation de l'organisme d'accueil (OCP Safi)
+    \item \textbf{Chapitre 2} : Étude de l'existant et analyse des besoins
+    \item \textbf{Chapitre 3} : Cahier des charges et spécifications
+    \item \textbf{Chapitre 4} : Solution proposée et choix technologiques
+    \item \textbf{Chapitre 5} : Réalisation et développement (cœur technique du projet)
+    \item \textbf{Chapitre 6} : Tests, validation et résultats
     \item \textbf{Chapitre 7} : Conclusion et perspectives futures
 \end{itemize}
 
-\chapter{Pr\'esentation de l'organisme d'accueil}
+\chapter{Présentation de l'organisme d'accueil}
 
 \section{Historique et structure du groupe OCP}
 
-L'Office Ch\'erifien des Phosphates (OCP) a \'et\'e fond\'e en 1920 sous le protectorat fran\c{c}ais. Entreprise publique jusqu'en 1998, elle a \'et\'e privatis\'ee progressivement et est devenue un groupe international stratégique. Aujourd'hui, l'OCP est le leader incontournable du secteur phosphatier mondial, avec une part de march\'e d'approximativement 30 \% des exportations mondiales de phosphate brut.
+L'Office Chérifien des Phosphates (OCP) a été fondé en 1920 sous le protectorat français. Entreprise publique jusqu'en 1998, elle a été privatisée progressivement et est devenue un groupe international stratégique. Aujourd'hui, l'OCP est le leader incontournable du secteur phosphatier mondial, avec une part de marché d'approximativement 30 \% des exportations mondiales de phosphate brut.
 
-Le groupe OCP op\`ere \`a travers plusieurs divisions strat\'egiques :
+Le groupe OCP opère à travers plusieurs divisions stratégiques :
 \begin{itemize}
-    \item \textbf{Division Extraction} : Extraction du phosphate brut \`a partir des gisements marocains
-    \item \textbf{Division Transformation} : Acide phosphorique et engrais phosphat\'es
-    \item \textbf{Division Sp\'ecialit\'es} : Produits chimiques de haute valeur ajout\'ee
+    \item \textbf{Division Extraction} : Extraction du phosphate brut à partir des gisements marocains
+    \item \textbf{Division Transformation} : Acide phosphorique et engrais phosphatés
+    \item \textbf{Division Spécialités} : Produits chimiques de haute valeur ajoutée
     \item \textbf{Division Logistique} : Transport maritime et gestion de ports
 \end{itemize}
 
-Le siège social d'OCP est situé \`a Casablanca, avec des centres de recherche \`a Marrakech, Safi et Jorf Lasfar. En 2024, l'OCP emploie plus de 20\,000 collaborateurs et g\'en\`ere un chiffre d'affaires d\'epassant les 8 milliards USD, confirmant son statut de gr\'eand acteur mondial.
+Le siège social d'OCP est situé à Casablanca, avec des centres de recherche à Marrakech, Safi et Jorf Lasfar. En 2024, l'OCP emploie plus de 20\,000 collaborateurs et génère un chiffre d'affaires dépassant les 8 milliards USD, confirmant son statut de grand acteur mondial.
 
 \section{Le site industriel de Safi}
 
-Safi est l'un des trois principaux sites de production du groupe OCP, avec Jorf Lasfar et Khouribga. Le site de Safi, situ\'e en bord de mer atlantique, accueille des installations de transformation avanc\'ees capable de traiter plus de 3 millions de tonnes de phosphate par an.
+Safi est l'un des trois principaux sites de production du groupe OCP, avec Jorf Lasfar et Khouribga. Le site de Safi, situé en bord de mer atlantique, accueille des installations de transformation avancées capable de traiter plus de 3 millions de tonnes de phosphate par an.
 
-Les \'equipements majeurs du site incluent :
+Les équipements majeurs du site incluent :
 \begin{itemize}
-    \item \textbf{Unit\'es d'extraction d'acide phosphorique} : Syst\`emes de r\'eaction acidul\'ee avec cristallisation
-    \item \textbf{Unit\'es de granulation d'engrais} : Machines complexes pour la production d'engrais phosphat\'es
-    \item \textbf{Syst\`emes de s\'echage et de refroidissement} : Technologie avanc\'ee pour la qualit\'e des produits
-    \item \textbf{Syst\`emes d'utilit\'e} : Compresseurs, pompes, \'echangeurs thermiques, g\'en\'erateurs de vapeur
+    \item \textbf{Unités d'extraction d'acide phosphorique} : Systèmes de réaction acidulée avec cristallisation
+    \item \textbf{Unités de granulation d'engrais} : Machines complexes pour la production d'engrais phosphatés
+    \item \textbf{Systèmes de séchage et de refroidissement} : Technologie avancée pour la qualité des produits
+    \item \textbf{Systèmes d'utilité} : Compresseurs, pompes, échangeurs thermiques, générateurs de vapeur
 \end{itemize}
 
-Ces machines, hautement sp\'ecialis\'ees et co\^uteuses (investissements de plusieurs millions USD chacune), fonctionnent sans interruption en mode continu 24/7. La fiabilit\'e de ces syst\`emes est critique pour la performance op\'erationnelle et la rentabilit\'e du site.
+Ces machines, hautement spécialisées et coûteuses (investissements de plusieurs millions USD chacune), fonctionnent sans interruption en mode continu 24/7. La fiabilité de ces systèmes est critique pour la performance opérationnelle et la rentabilité du site.
 
-\section{D\'epartement Maintenance Industrielle}
+\section{Département Maintenance Industrielle}
 
-Le d\'epartement Maintenance Industrielle de Safi est responsable de la disponibilit\'e et de la fiabilit\'e de tous les \'equipements de production. L'\'equipe est compos\'ee d'\'environ 150 techniciens et ing\'enieurs sp\'ecialis\'es dans diff\'erentes disciplines (m\'ecanique, \'electrique, instrumentation, automatisme).
+Le département Maintenance Industrielle de Safi est responsable de la disponibilité et de la fiabilité de tous les équipements de production. L'équipe est composée d'environ 150 techniciens et ingénieurs spécialisés dans différentes disciplines (mécanique, électrique, instrumentation, automatisme).
 
-Actuellement, le d\'epartement gère la maintenance selon deux mod\`eles :
+Actuellement, le département gère la maintenance selon deux modèles :
 \begin{itemize}
-    \item \textbf{Maintenance corrective} : R\'eparation des \'equipements apr\`es d\'efaillance (repr\'esente environ 40\% des interventions)
-    \item \textbf{Maintenance pr\'eventive} : Entretien planifi\'e selon calendrier standard (repr\'esente environ 60\% des interventions)
+    \item \textbf{Maintenance corrective} : Réparation des équipements après défaillance (représente environ 40\% des interventions)
+    \item \textbf{Maintenance préventive} : Entretien planifié selon calendrier standard (représente environ 60\% des interventions)
 \end{itemize}
 
-Les d\'efaillances non anticipées entraînent des coûts directs \'el\'ev\'es (mobilisation d'\'equipes, remplacement de pi\`eces) et surtout des coûts indirects majorés par les arr\^ets de production (pertes commerciales, p\'enalit\'es contractuelles avec les clients).
+Les défaillances non anticipées entraînent des coûts directs élevés (mobilisation d'équipes, remplacement de pièces) et surtout des coûts indirects majorés par les arrêts de production (pertes commerciales, pénalités contractuelles avec les clients).
 
 \section{Contexte et besoins d'optimisation}
 
-Le site de Safi g\'en\`ere quotidiennement d'importantes donn\'ees op\'erationnelles : capteurs de vibration, de temp\'erature, de pression, d'humidit\'e, de consommation \'energ\'etique, etc. Ces donn\'ees, actuellement collect\'ees et archiv\'ees, ne sont pas exploit\'ees de mani\`ere intelligente pour pr\'evenir les d\'efaillances.
+Le site de Safi génère quotidiennement d'importantes données opérationnelles : capteurs de vibration, de température, de pression, d'humidité, de consommation énergétique, etc. Ces données, actuellement collectées et archivées, ne sont pas exploitées de manière intelligente pour prévenir les défaillances.
 
-Les enjeux identifi\'es sont :
+Les enjeux identifiés sont :
 \begin{itemize}
-    \item R\'eduction des arr\^ets non planifi\'es (actuellement 15-20 par an par grande unit\'e)
-    \item Optimisation des plannings de maintenance (r\'eduction des interventions inutiles)
-    \item Am\'elioration de la disponibilit\'e des \'equipements (passage de 92\% \`a 96-98\%)
+    \item Réduction des arrêts non planifiés (actuellement 15-20 par an par grande unité)
+    \item Optimisation des plannings de maintenance (réduction des interventions inutiles)
+    \item Amélioration de la disponibilité des équipements (passage de 92\% à 96-98\%)
     \item Meilleure allocation des ressources humaines de maintenance
-    \item R\'eduction des coûts op\'erationnels de 10-15\% estim\'es
+    \item Réduction des coûts opérationnels de 10-15\% estimés
 \end{itemize}
 
 \chapter{\'Etude de l'existant et analyse des besoins}
@@ -244,116 +244,116 @@ Les enjeux identifi\'es sont :
 
 \subsection{Maintenance corrective}
 
-La maintenance corrective intervient apr\`es l'occurrence d'une d\'efaillance. Lorsqu'une machine s'arr\^ete, une \'equipe de techniciens est mobilis\'ee en urgence pour diagnostiquer et r\'eparer le probl\`eme. Cette approche entra\^{\i}ne :
+La maintenance corrective intervient après l'occurrence d'une défaillance. Lorsqu'une machine s'arrête, une équipe de techniciens est mobilisée en urgence pour diagnostiquer et réparer le problème. Cette approche entraîne :
 
 \begin{itemize}
-    \item \textbf{Co\^uts importants} : Mobilisation d'\'equipes de nuit/week-end, surtemps, urgences d'approvisionnement
-    \item \textbf{Impact production} : Arr\^et non planifi\'e de la cha\^{\i}ne de production, non-respect des livraisons
-    \item \textbf{Seconde d\'egradation} : La d\'efaillance d'une machine peut causer des dégradations en cascade
+    \item \textbf{Co\^uts importants} : Mobilisation d'équipes de nuit/week-end, surtemps, urgences d'approvisionnement
+    \item \textbf{Impact production} : Arr\^et non planifié de la chaîne de production, non-respect des livraisons
+    \item \textbf{Seconde dégradation} : La défaillance d'une machine peut causer des dégradations en cascade
 \end{itemize}
 
-\subsection{Maintenance pr\'eventive}
+\subsection{Maintenance préventive}
 
-La maintenance pr\'eventive repose sur un calendrier pr\'e\'etabli : changement d'huile tous les X heures, inspection tous les Y mois, etc. Bien que r\'eduisant le risque de panne, cette approche souffre de deux limitations :
+La maintenance préventive repose sur un calendrier préétabli : changement d'huile tous les X heures, inspection tous les Y mois, etc. Bien que réduisant le risque de panne, cette approche souffre de deux limitations :
 
 \begin{itemize}
-    \item \textbf{Interventions inutiles} : L'\'equipement peut \^etre en bon état, mais l'intervention est quand m\^eme r\'ealis\'ee
-    \item \textbf{Manque d'adaptativit\'e} : Les calendriers ne s'adaptent pas aux conditions r\'eelles d'op\'eration (intensit\'e d'utilisation, environnement)
+    \item \textbf{Interventions inutiles} : L'équipement peut \^etre en bon état, mais l'intervention est quand m\^eme réalisée
+    \item \textbf{Manque d'adaptativité} : Les calendriers ne s'adaptent pas aux conditions réelles d'opération (intensité d'utilisation, environnement)
 \end{itemize}
 
-\section{Probl\`emes identifi\'es}
+\section{Problèmes identifiés}
 
-\subsection{Absence d'exploitation des donn\'ees capteurs}
+\subsection{Absence d'exploitation des données capteurs}
 
-Le site de Safi dispose d'un r\'eseau capteurs \'etendu mais ces donn\'ees sont actuellement collect\'ees dans une base de donn\'ees sans analyse pr\'edictive. Les signaux de d\'egradation progressive sont ignor\'es, m\^eme lorsqu'ils auraient pu permettre une intervention anticip\'ee.
+Le site de Safi dispose d'un réseau capteurs étendu mais ces données sont actuellement collectées dans une base de données sans analyse prédictive. Les signaux de dégradation progressive sont ignorés, m\^eme lorsqu'ils auraient pu permettre une intervention anticipée.
 
-\subsection{Manque de visibilit\'e d\'ecisionnelle}
+\subsection{Manque de visibilité décisionnelle}
 
-Les responsables de maintenance ne disposent pas d'une vue synth\'etique et actualis\'ee du risque pour chaque machine. Les d\'ecisions de maintenance reposent sur des conversations informelles, des rapports manuels incomplets, sans donn\'ees quantifi\'ees.
+Les responsables de maintenance ne disposent pas d'une vue synthétique et actualisée du risque pour chaque machine. Les décisions de maintenance reposent sur des conversations informelles, des rapports manuels incomplets, sans données quantifiées.
 
-\subsection{Inefficacit\'e du processus de planification}
+\subsection{Inefficacité du processus de planification}
 
-Planifier les interventions de maintenance sur environ 200 machines sans priorisations objectives entra\^{\i}ne une allocation sous-optimale des ressources. Les machines les plus critiques peuvent être d\'elaiss\'ees au profit de machines moins importantes.
+Planifier les interventions de maintenance sur environ 200 machines sans priorisations objectives entraîne une allocation sous-optimale des ressources. Les machines les plus critiques peuvent être délaissées au profit de machines moins importantes.
 
-\section{Benchmarking des solutions de maintenance pr\'edictive}
+\section{Benchmarking des solutions de maintenance prédictive}
 
-Le march\'e des solutions de maintenance pr\'edictive propose plusieurs approches :
+Le marché des solutions de maintenance prédictive propose plusieurs approches :
 
 \begin{table}[H]
 \centering
 \small
-\caption{Comparaison des approches de Maintenance Pr\'edictive}
+\caption{Comparaison des approches de Maintenance Prédictive}
 \begin{tabular}{|l|c|c|c|}
 \hline
-\textbf{Approche} & \textbf{Complexit\'e} & \textbf{Performance} & \textbf{Interpr\'etabilit\'e} \\
+\textbf{Approche} & \textbf{Complexité} & \textbf{Performance} & \textbf{Interprétabilité} \\
 \hline\hline
-Seuils statistiques (contrôle qualit\'e) & Basse & Moyenne & Excellente \\
+Seuils statistiques (contrôle qualité) & Basse & Moyenne & Excellente \\
 \hline
-R\'egression logistique & Moyenne & Bonne & Excellente \\
+Régression logistique & Moyenne & Bonne & Excellente \\
 \hline
-Random Forest / XGBoost & Moyenne-\'Elev\'ee & Excellent & Bonne \\
+Random Forest / XGBoost & Moyenne-\'Elevée & Excellent & Bonne \\
 \hline
-R\'eseaux de neurones (Deep Learning) & Tr\`es \'elev\'ee & Excellent & Faible \\
+Réseaux de neurones (Deep Learning) & Très élevée & Excellent & Faible \\
 \hline
 \end{tabular}
 \end{table}
 
-Pour le contexte de l'OCP Safi, une approche de Machine Learning supervisé bas\'ee sur XGBoost repr\'esente un \'equilibre optimal entre performance pr\'edictive et interpr\'etabilit\'e. Les arbres de d\'ecision boostés offrent une excellente discrimination de classes tout en permettant d'expliquer les pr\'edictions via l'importance des variables.
+Pour le contexte de l'OCP Safi, une approche de Machine Learning supervisé basée sur XGBoost représente un équilibre optimal entre performance prédictive et interprétabilité. Les arbres de décision boostés offrent une excellente discrimination de classes tout en permettant d'expliquer les prédictions via l'importance des variables.
 
 \chapter{Cahier des charges}
 
-\section{Objectifs d\'etaill\'es du projet}
+\section{Objectifs détaillés du projet}
 
-\subsection{Objectif 1 : Pipeline ETL automatis\'e}
+\subsection{Objectif 1 : Pipeline ETL automatisé}
 
-Construire un syst\`eme automatis\'e d'extraction, transformation et chargement (ETL) capable de :
+Construire un système automatisé d'extraction, transformation et chargement (ETL) capable de :
 \begin{itemize}
-    \item Lire les donn\'ees brutes depuis des fichiers CSV
+    \item Lire les données brutes depuis des fichiers CSV
     \item Appliquer des transformations (nettoyage, normalistion, feature engineering)
-    \item Charger les donn\'ees traits\'ees dans une base de donn\'ees PostgreSQL
-    \item Journaliser compl\`etement chaque \'etape pour traçabilit\'e
+    \item Charger les données traitsées dans une base de données PostgreSQL
+    \item Journaliser complètement chaque étape pour traçabilité
 \end{itemize}
 
-\subsection{Objectif 2 : Mod\`ele ML performant}
+\subsection{Objectif 2 : Modèle ML performant}
 
-Entra\^{\i}ner un mod\`ele de Machine Learning capable de :
+Entra\^{\i}ner un modèle de Machine Learning capable de :
 \begin{itemize}
-    \item Pr\'edire le risque de panne avec une pr\'ecision minimale de ROC-AUC > 0.95
+    \item Prédire le risque de panne avec une précision minimale de ROC-AUC > 0.95
     \item Classifier les risques en trois niveaux (Low, Medium, High)
-    \item G\'erer le d\'es\'equilibre des classes (3,39\% de pannes dans le dataset)
-    \item Permettre l'interpr\'etabilit\'e des d\'ecisions via importance des variables
+    \item Gérer le déséquilibre des classes (3,39\% de pannes dans le dataset)
+    \item Permettre l'interprétabilité des décisions via importance des variables
 \end{itemize}
 
-\subsection{Objectif 3 : Base de donn\'ees robuste}
+\subsection{Objectif 3 : Base de données robuste}
 
 Concevoir une architecture PostgreSQL :
 \begin{itemize}
-    \item 4 tables relationnelles avec contraintes d'int\'egrit\'e
-    \item 3 vues SQL optimis\'ees pour les besoins d'analyse
+    \item 4 tables relationnelles avec contraintes d'intégrité
+    \item 3 vues SQL optimisées pour les besoins d'analyse
     \item Indexation performante des colonnes critiques
-    \item Rôles de s\'ecurit\'e granulaires
+    \item Rôles de sécurité granulaires
 \end{itemize}
 
 \subsection{Objectif 4 : Dashboard Business Intelligence}
 
-D\'eveloper un tableau de bord Power BI :
+Déveloper un tableau de bord Power BI :
 \begin{itemize}
-    \item 3 pages th\'ematiques (KPIs globaux, priorisation Top 50, qualit\'e mod\`ele)
-    \item Plus de 20 mesures DAX pour les calculs m\'etier avanc\'es
-    \item Visualisations interactives et filtres crois\'es
-    \item Connexion directe \`a PostgreSQL
+    \item 3 pages thématiques (KPIs globaux, priorisation Top 50, qualité modèle)
+    \item Plus de 20 mesures DAX pour les calculs métier avancés
+    \item Visualisations interactives et filtres croisés
+    \item Connexion directe à PostgreSQL
 \end{itemize}
 
 \section{Besoins fonctionnels}
 
 \begin{enumerate}
-    \item Import et nettoyage automatis\'e des donn\'ees capteurs
-    \item Pr\'ediction du risque de panne pour chaque machine avec probabilit\'e [0, 1]
+    \item Import et nettoyage automatisé des données capteurs
+    \item Prédiction du risque de panne pour chaque machine avec probabilité [0, 1]
     \item Classification en trois niveaux de risque (Low < 0.30, Medium [0.30, 0.60), High ≥ 0.60)
-    \item Visualisation interactive des KPIs m\'etiers (nombre de machines, distribution des risques, etc.)
-    \item Liste de priorisation des machines n\'ecessitant une intervention
-    \item Historique des performances du mod\`ele (m\'etriques d'entra\^{\i}nement)
-    \item Alertes visuelles pour les machines à risque \'el\'ev\'e
+    \item Visualisation interactive des KPIs métiers (nombre de machines, distribution des risques, etc.)
+    \item Liste de priorisation des machines nécessitant une intervention
+    \item Historique des performances du modèle (métriques d'entraînement)
+    \item Alertes visuelles pour les machines à risque élévé
 \end{enumerate}
 
 \section{Besoins techniques}
@@ -361,30 +361,30 @@ D\'eveloper un tableau de bord Power BI :
 \begin{table}[H]
 \centering
 \small
-\caption{Caract\'eristiques techniques du projet}
+\caption{Caractéristiques techniques du projet}
 \begin{tabular}{|l|l|}
 \hline
-\textbf{Aspect} & \textbf{Sp\'ecification} \\
+\textbf{Aspect} & \textbf{Spécification} \\
 \hline\hline
 Langage de programmation & Python 3.11 \\
 \hline
 Framework d'apprentissage & XGBoost 2.1.3 \\
 \hline
-Pr\'etraitement & Scikit-learn 1.5.2, Pandas \\
+Prétraitement & Scikit-learn 1.5.2, Pandas \\
 \hline
-Base de donn\'ees & PostgreSQL 16 \\
+Base de données & PostgreSQL 16 \\
 \hline
 Driver PostgreSQL & psycopg2 \\
 \hline
 Business Intelligence & Power BI Desktop \\
 \hline
-Format donn\'ees source & CSV (AI4I 2020 Dataset) \\
+Format données source & CSV (AI4I 2020 Dataset) \\
 \hline
 Taille dataset & 10\,000 enregistrements, 14 colonnes \\
 \hline
-Taux de d\'es\'equilibre & 339 pannes / 10\,000 (3,39\%) \\
+Taux de déséquilibre & 339 pannes / 10\,000 (3,39\%) \\
 \hline
-Plateforme ex\'ecution & Windows 10/11 (PowerShell) \\
+Plateforme exécution & Windows 10/11 (PowerShell) \\
 \hline
 \end{tabular}
 \end{table}
@@ -392,25 +392,25 @@ Plateforme ex\'ecution & Windows 10/11 (PowerShell) \\
 \section{Contraintes}
 
 \begin{itemize}
-    \item \textbf{Confidentialit\'e} : Le dataset r\'eel d'OCP \'etant confidentiel, l'utilisation du dataset public AI4I 2020 est une contrainte projet
-    \item \textbf{Infrastructure} : Pas de serveur dédié disponible, ex\'ecution sur machine locale
-    \item \textbf{Timeframe} : Projet de fin d'\'etudes avec dur\'ee fixe (6-7 mois)
-    \item \textbf{Compétences} : \'Equipe composée d'\'etudiants (pas de data engineers expériment\'es)
+    \item \textbf{Confidentialité} : Le dataset réel d'OCP étant confidentiel, l'utilisation du dataset public AI4I 2020 est une contrainte projet
+    \item \textbf{Infrastructure} : Pas de serveur dédié disponible, exécution sur machine locale
+    \item \textbf{Timeframe} : Projet de fin d'études avec durée fixe (6-7 mois)
+    \item \textbf{Compétences} : \'Equipe composée d'étudiants (pas de data engineers expérimentés)
 \end{itemize}
 
-\chapter{Solution propos\'ee et choix technologiques}
+\chapter{Solution proposée et choix technologiques}
 
 \section{Architecture globale de la solution}
 
-Le syst\`eme de Maintenance Pr\'edictive repose sur une architecture en trois couches :
+Le système de Maintenance Prédictive repose sur une architecture en trois couches :
 
 \begin{enumerate}
-    \item \textbf{Couche Ingestion \& ETL} : Pipeline Python automatis\'e pour l'extraction, nettoyage et transformation des donn\'ees brutes
-    \item \textbf{Couche Persistance \& Analytique} : Base de donn\'ees PostgreSQL avec tables relationnelles et vues optimis\'ees
-    \item \textbf{Couche Pr\'esentation \& D\'ecision} : Dashboard Power BI interactif fournissant visualisations et insights
+    \item \textbf{Couche Ingestion \& ETL} : Pipeline Python automatisé pour l'extraction, nettoyage et transformation des données brutes
+    \item \textbf{Couche Persistance \& Analytique} : Base de données PostgreSQL avec tables relationnelles et vues optimisées
+    \item \textbf{Couche Présentation \& Décision} : Dashboard Power BI interactif fournissant visualisations et insights
 \end{enumerate}
 
-Le flux de donn\'ees suit cette progression :
+Le flux de données suit cette progression :
 
 \begin{verbatim}
 CSV brut (AI4I 2020, 10 000 lignes)
@@ -431,62 +431,62 @@ Dashboard 3 pages interactif
 
 \section{Choix des technologies}
 
-\subsection{Python et l'\'ecosyst\`eme Data Science}
+\subsection{Python et l'écosystème Data Science}
 
-Python 3.11 a \'et\'e choisi comme langage principal de d\'eveloppement pour plusieurs raisons :
+Python 3.11 a été choisi comme langage principal de développement pour plusieurs raisons :
 
 \begin{itemize}
-    \item \textbf{\'Ecosyst\`eme mature} : Les biblioth\`eques pandas, NumPy, Scikit-learn et XGBoost offrent des outils de classe mondiale pour le ML
-    \item \textbf{Communaut\'e} : Large communaut\'e de data scientists avec abondance d'exemples, tutoriels, et bonnes pratiques
-    \item \textbf{Rapidit\'e d\'eveloppement} : Syntaxe intuitive et dynamique permettant une imp\'l\'ementation rapide
-    \item \textbf{Performance} : Extensions Cython et num\'eriques (NumPy) offrent des performances suffisantes pour ce volumétrie
-    \item \textbf{Portabilit\'e} : Fonctionne sur Windows, Linux, macOS sans modification
+    \item \textbf{\'Ecosystème mature} : Les bibliothèques pandas, NumPy, Scikit-learn et XGBoost offrent des outils de classe mondiale pour le ML
+    \item \textbf{Communauté} : Large communauté de data scientists avec abondance d'exemples, tutoriels, et bonnes pratiques
+    \item \textbf{Rapidité développement} : Syntaxe intuitive et dynamique permettant une imp\'lémentation rapide
+    \item \textbf{Performance} : Extensions Cython et numériques (NumPy) offrent des performances suffisantes pour ce volumétrie
+    \item \textbf{Portabilité} : Fonctionne sur Windows, Linux, macOS sans modification
 \end{itemize}
 
-\subsection{XGBoost — Le mod\`ele de pr\'ediction}
+\subsection{XGBoost — Le modèle de prédiction}
 
-XGBoost (eXtreme Gradient Boosting) a \'et\'e s\'electionn\'e comme algorithme principal pour les raisons suivantes :
+XGBoost (eXtreme Gradient Boosting) a été sélectionné comme algorithme principal pour les raisons suivantes :
 
-\subsubsection{Th\'eorie sous-jacente}
+\subsubsection{Théorie sous-jacente}
 
-XGBoost implémente l'algorithme du Gradient Boosting, qui construit s\'equentiellement une ensemble d'arbres de d\'ecision faibles, chacun visant à corriger les erreurs du pr\'ec\'edent. Formellement, le mod\`ele cherche à minimiser :
+XGBoost implémente l'algorithme du Gradient Boosting, qui construit séquentiellement une ensemble d'arbres de décision faibles, chacun visant à corriger les erreurs du précédent. Formellement, le modèle cherche à minimiser :
 
 $$L = \sum_{i=1}^{n} l(y_i, \hat{y}_i) + \sum_{k=1}^{m} \Omega(f_k)$$
 
-o\`u $l$ est la fonction de perte, $\Omega$ est le terme de r\'egularisation (L1/L2), $m$ est le nombre d'arbres, et $y_i$, $\hat{y}_i$ sont les vraies et pr\'edites valeurs.
+o\`u $l$ est la fonction de perte, $\Omega$ est le terme de régularisation (L1/L2), $m$ est le nombre d'arbres, et $y_i$, $\hat{y}_i$ sont les vraies et prédites valeurs.
 
 \subsubsection{Avantages pratiques}
 
 \begin{itemize}
-    \item \textbf{Performance sup\'erieure} : Aux benchmarks, XGBoost surpasse Random Forest, SVM et r\'egression logistique sur des probl\`emes de classification d\'es\'equilibr\'es
-    \item \textbf{Gestion du d\'es\'equilibre} : Param\`etre \texttt{scale\_pos\_weight} permet d'ajuster automatiquement le poids des classes
-    \item \textbf{Efficacit\'e} : Implémentation CPU-optim\'ee (method=`hist') pour traitement rapide de grandes donn\'ees
-    \item \textbf{Interpr\'etabilit\'e} : Fourniture native de l'importance de chaque variable (feature importance)
-    \item \textbf{Arrêt anticip\'e} : Early stopping sur ensemble de validation pr\'evient l'overfitting
+    \item \textbf{Performance supérieure} : Aux benchmarks, XGBoost surpasse Random Forest, SVM et régression logistique sur des problèmes de classification déséquilibrés
+    \item \textbf{Gestion du déséquilibre} : Paramètre \texttt{scale\_pos\_weight} permet d'ajuster automatiquement le poids des classes
+    \item \textbf{Efficacité} : Implémentation CPU-optimée (method=`hist') pour traitement rapide de grandes données
+    \item \textbf{Interprétabilité} : Fourniture native de l'importance de chaque variable (feature importance)
+    \item \textbf{Arrêt anticipé} : Early stopping sur ensemble de validation prévient l'overfitting
 \end{itemize}
 
-\subsection{PostgreSQL — La base de donn\'ees relationnelle}
+\subsection{PostgreSQL — La base de données relationnelle}
 
-PostgreSQL 16 a \'et\'e s\'electionn\'e comme SGBD pour :
+PostgreSQL 16 a été sélectionné comme SGBD pour :
 
 \begin{itemize}
-    \item \textbf{Robustesse} : Base de donn\'ees open-source extr\^emement stable, utilis\'ee en production par Fortune 500
-    \item \textbf{Caract\'eristiques avanc\'ees} : Types de donn\'ees avanc\'es (JSON, UUID), vues mat\'erialisees, foreign keys
-    \item \textbf{Performance} : Optimiser \'elab\'orée, indexation B-tree, support des parall\'elisation de requêtes
-    \item \textbf{S\'ecurit\'e} : Rôles granulaires, authentification, encryption native
-    \item \textbf{Coûts} : Open-source, aucune licence, d\'eploiement flexible
+    \item \textbf{Robustesse} : Base de données open-source extr\^emement stable, utilisée en production par Fortune 500
+    \item \textbf{Caractéristiques avancées} : Types de données avancés (JSON, UUID), vues matérialisees, foreign keys
+    \item \textbf{Performance} : Optimiser élab\'orée, indexation B-tree, support des parallélisation de requêtes
+    \item \textbf{Sécurité} : Rôles granulaires, authentification, encryption native
+    \item \textbf{Coûts} : Open-source, aucune licence, déploiement flexible
 \end{itemize}
 
 \subsection{Power BI — La couche de Business Intelligence}
 
-Power BI Desktop a \'et\'e choisi pour la visualisation car :
+Power BI Desktop a été choisi pour la visualisation car :
 
 \begin{itemize}
-    \item \textbf{Intégration PostgreSQL} : Connexion native directe sans nécessité de transformations interm\'ediaires
-    \item \textbf{DAX avanc\'e} : Langage de formule DAX permettant des calculs m\'etier complexes
-    \item \textbf{Visuels interactifs} : Graphiques, cartes, tableaux avec drill-down, filtres crois\'es
+    \item \textbf{Intégration PostgreSQL} : Connexion native directe sans nécessité de transformations intermédiaires
+    \item \textbf{DAX avancé} : Langage de formule DAX permettant des calculs métier complexes
+    \item \textbf{Visuels interactifs} : Graphiques, cartes, tableaux avec drill-down, filtres croisés
     \item \textbf{Collaboration} : Publication cloud (Power BI Service) pour partage avec stakeholders
-    \item \textbf{Adoption} : TR\`ES large adoption en entreprise, formation d\'ej\`a disponible en interne
+    \item \textbf{Adoption} : TR\`ES large adoption en entreprise, formation déjà disponible en interne
 \end{itemize}
 
 \section{Justification comparative}
@@ -499,32 +499,32 @@ Power BI Desktop a \'et\'e choisi pour la visualisation car :
 \caption{Comparaison XGBoost vs alternatives}
 \begin{tabular}{|l|c|c|c|c|}
 \hline
-\textbf{Crit\`ere} & \textbf{XGBoost} & \textbf{Random Forest} & \textbf{LogReg} & \textbf{SVM} \\
+\textbf{Critère} & \textbf{XGBoost} & \textbf{Random Forest} & \textbf{LogReg} & \textbf{SVM} \\
 \hline\hline
 ROC-AUC typ. & 0.98 & 0.95 & 0.85 & 0.92 \\
 \hline
-Interpr\'etabilit\'e & Bonne & Moyenne & Excellente & Faible \\
+Interprétabilité & Bonne & Moyenne & Excellente & Faible \\
 \hline
-Gestion d\'es\'equil. & Native & Manuelle & Native & Manuelle \\
+Gestion déséquil. & Native & Manuelle & Native & Manuelle \\
 \hline
-Scalabilit\'e & Excellent & Bon & Excellent & Moyen \\
+Scalabilité & Excellent & Bon & Excellent & Moyen \\
 \hline
-Temps entra\^{\i}n. & Moyen & Rapide & Tr\`es rapide & Lent \\
+Temps entra\^{\i}n. & Moyen & Rapide & Très rapide & Lent \\
 \hline
 \end{tabular}
 \end{table}
 
-XGBoost offre le meilleur compromis entre performance et interpr\'etabilit\'e.
+XGBoost offre le meilleur compromis entre performance et interprétabilité.
 
-\chapter{R\'ealisation et d\'eveloppement}
+\chapter{Réalisation et développement}
 
-\emph{Ce chapitre constitue le cœur technique du projet. Il d\'etaille chaque composant du syst\`eme avec explications th\'eoriques, extraits de code, r\'esultats et captures d'\'ecran.}
+\emph{Ce chapitre constitue le cœur technique du projet. Il détaille chaque composant du système avec explications théoriques, extraits de code, résultats et captures d'écran.}
 
-\section{Environnement de d\'eveloppement}
+\section{Environnement de développement}
 
 \subsection{Configuration ma\^{\i}tre de l'environnement}
 
-L'environnement de d\'eveloppement a \'et\'e configur\'e sur un ordinateur Windows 11 avec :
+L'environnement de développement a été configuré sur un ordinateur Windows 11 avec :
 
 \begin{table}[H]
 \centering
@@ -549,9 +549,9 @@ IDE & Visual Studio Code + Jupyter \\
 \end{tabular}
 \end{table}
 
-\subsection{Cr\'eation de l'environnement virtuel Python}
+\subsection{Création de l'environnement virtuel Python}
 
-Un environnement virtuel isol\'e a \'et\'e cr\'e\'e pour \'eviter les conflits de d\'ependances :
+Un environnement virtuel isolé a été créé pour éviter les conflits de dépendances :
 
 \begin{lstlisting}[language=bash]
 # Création du venv
@@ -578,7 +578,7 @@ python-dotenv==1.0.0
 joblib==1.3.2
 \end{lstlisting}
 
-\subsection{Structure de r\'epertoires du projet}
+\subsection{Structure de répertoires du projet}
 
 Le projet est organisé selon une structure modulaire :
 
@@ -614,7 +614,7 @@ Projet_PFE/
 
 \subsection{Lecture et exploration du dataset AI4I 2020}
 
-Le dataset utilis\'e provient du UCI Machine Learning Repository et repr\'esente des conditions d'op\'eration de machines industrielles simul\'ees. Il contient 10\,000 enregistrements et 14 colonnes :
+Le dataset utilisé provient du UCI Machine Learning Repository et représente des conditions d'opération de machines industrielles simulées. Il contient 10\,000 enregistrements et 14 colonnes :
 
 \begin{table}[H]
 \centering
@@ -622,7 +622,7 @@ Le dataset utilis\'e provient du UCI Machine Learning Repository et repr\'esente
 \caption{Description des colonnes du dataset AI4I 2020}
 \begin{tabular}{|l|l|c|l|}
 \hline
-\textbf{Colonne} & \textbf{Type} & \textbf{Unit\'e} & \textbf{Description} \\
+\textbf{Colonne} & \textbf{Type} & \textbf{Unité} & \textbf{Description} \\
 \hline\hline
 UDI & Entier & - & Identifiant unique produit \\
 \hline
@@ -630,15 +630,15 @@ Product ID & Texte & - & Type produit (L, M, H) \\
 \hline
 Type & Texte & - & Type de machine (L=bas, M=moyen, H=haut) \\
 \hline
-Air temperature [K] & D\'ecimal & Kelvin & Temp. ambiante \\
+Air temperature [K] & Décimal & Kelvin & Temp. ambiante \\
 \hline
-Process temperature [K] & D\'ecimal & Kelvin & Temp. process \\
+Process temperature [K] & Décimal & Kelvin & Temp. process \\
 \hline
 Rotational speed [rpm] & Entier & tours/min & Vitesse rotation \\
 \hline
-Torque [Nm] & D\'ecimal & Newton-m\`etre & Couple appliqu\'e \\
+Torque [Nm] & Décimal & Newton-mètre & Couple appliqué \\
 \hline
-Tool wear [min] & Entier & Minutes & Usure cumul\'ee \\
+Tool wear [min] & Entier & Minutes & Usure cumulée \\
 \hline
 Machine failure & Binaire & 0/1 & Panne survenue (Y=1, N=0) \\
 \hline
@@ -678,13 +678,13 @@ Tool wear (min) & 107.89 & 63.55 & 0 & 253 & OK \\
 \end{tabular}
 \end{table}
 
-\textbf{Déséquilibre de classes} : Sur 10\,000 enregistrements, seulement 339 machines ont connu une d\'efaillance (3,39\%). Ce ratio fortement d\'es\'equilibr\'e est typique en maintenance pr\'edictive (les pannes sont rares) et impose des ajustements sp\'ecifiques du mod\`ele.
+\textbf{Déséquilibre de classes} : Sur 10\,000 enregistrements, seulement 339 machines ont connu une défaillance (3,39\%). Ce ratio fortement déséquilibré est typique en maintenance prédictive (les pannes sont rares) et impose des ajustements spécifiques du modèle.
 
-\subsection{Nettoyage et pr\'etraitement des donn\'ees}
+\subsection{Nettoyage et prétraitement des données}
 
 \subsubsection{Imputation des valeurs manquantes}
 
-Un scan initial a v\'erifi\'e l'existence de donn\'ees manquantes. Dans ce dataset, aucune valeur NA n'\'etait pr\'esente, mais en production, l'imputation suit ces r\`egles :
+Un scan initial a vérifié l'existence de données manquantes. Dans ce dataset, aucune valeur NA n'était présente, mais en production, l'imputation suit ces règles :
 
 \begin{lstlisting}[language=Python]
 # Imputation des valeurs manquantes
@@ -698,7 +698,7 @@ for col in data.select_dtypes(include=['object']).columns:
 
 \subsubsection{Détection et écrêtage des outliers}
 
-Les valeurs aberrantes sont d\'etect\'ees en utilisant la m\'ethode de l'écart-type. Une valeur est consid\'er\'ee comme aberrante si elle s\'eloigne de la moyenne de plus de ±3 écarts-types :
+Les valeurs aberrantes sont détectées en utilisant la méthode de l'écart-type. Une valeur est considérée comme aberrante si elle séloigne de la moyenne de plus de ±3 écarts-types :
 
 \begin{lstlisting}[language=Python]
 def remove_outliers(data, columns, threshold=3):
@@ -717,11 +717,11 @@ def remove_outliers(data, columns, threshold=3):
     return data
 \end{lstlisting}
 
-Les colonnes concern\'ees par l'écrêtage sont : \texttt{air\_temperature\_k}, \texttt{process\_temperature\_k}, \texttt{rotational\_speed\_rpm}, \texttt{torque\_nm}, \texttt{tool\_wear\_min}.
+Les colonnes concernées par l'écrêtage sont : \texttt{air\_temperature\_k}, \texttt{process\_temperature\_k}, \texttt{rotational\_speed\_rpm}, \texttt{torque\_nm}, \texttt{tool\_wear\_min}.
 
 \subsubsection{Feature Engineering — Création de variables dérivées}
 
-Deux nouvelles variables hautement corr\'el\'ees avec les pannes ont \'et\'e cr\'e\'ees :
+Deux nouvelles variables hautement corrélées avec les pannes ont été créées :
 
 \begin{lstlisting}[language=Python]
 # Différentiel thermique (processus - ambiance)
@@ -736,16 +736,16 @@ type_mapping = {'L': 0, 'M': 1, 'H': 2}
 data['type_encoded'] = data['type'].map(type_mapping)
 \end{lstlisting}
 
-Ces features capturent des ph\'enom\`enes physiques importants :
+Ces features capturent des phénomènes physiques importants :
 \begin{itemize}
-    \item \texttt{temp\_diff} : \'Ecart thermique li\'e aux conditions d'op\'eration
-    \item \texttt{power} : Puissance m\'ecanique corr\'el\'ee aux contraintes mat\'erielles
-    \item \texttt{type\_encoded} : Cat\'egorisation par intensit\'e d'utilisation
+    \item \texttt{temp\_diff} : \'Ecart thermique lié aux conditions d'opération
+    \item \texttt{power} : Puissance mécanique corrélée aux contraintes matérielles
+    \item \texttt{type\_encoded} : Catégorisation par intensité d'utilisation
 \end{itemize}
 
 \subsection{Insertion batch en PostgreSQL}
 
-Les donn\'ees nettoy\'ees sont ins\'er\'ees en PostgreSQL via la fonction \texttt{execute\_values} pour performance batch :
+Les données nettoyées sont insérées en PostgreSQL via la fonction \texttt{execute\_values} pour performance batch :
 
 \begin{lstlisting}[language=Python]
 from psycopg2.extras import execute_values
@@ -773,7 +773,7 @@ def insert_batch(conn, table, data, page_size=500):
 
 \subsection{Séparation train/test et normalisation}
 
-Les donn\'ees sont s\'epar\'ees en ensembles d'entra\^{\i}nement (80\%) et de test (20\%) de mani\`ere stratifi\'ee pour pr\'eserver la distribution des classes :
+Les données sont séparées en ensembles d'entraînement (80\%) et de test (20\%) de manière stratifiée pour préserver la distribution des classes :
 
 \begin{lstlisting}[language=Python]
 from sklearn.model_selection import train_test_split
@@ -795,7 +795,7 @@ joblib.dump(scaler, 'modeles/normaliseur.joblib')
 
 \subsection{Modèle de référence : Régression Logistique}
 
-Un mod\`ele de baseline est entra\^{\i}n\'e pour comparaison :
+Un modèle de baseline est entra\^{\i}né pour comparaison :
 
 \begin{lstlisting}[language=Python]
 from sklearn.linear_model import LogisticRegression
@@ -818,7 +818,7 @@ scores = cross_validate(
 print(f"LogReg ROC-AUC: {scores['test_roc_auc'].mean():.4f}")
 \end{lstlisting}
 
-R\'esultats de baseline :
+Résultats de baseline :
 \begin{itemize}
     \item ROC-AUC : 0.8623
     \item Recall : 0.7834
@@ -827,7 +827,7 @@ R\'esultats de baseline :
 
 \subsection{Modèle principal : XGBoost}
 
-Le mod\`ele XGBoost principal est entra\^{\i}n\'e avec hyperparamètres optimis\'es :
+Le modèle XGBoost principal est entra\^{\i}né avec hyperparamètres optimisés :
 
 \begin{lstlisting}[language=Python]
 from xgboost import XGBClassifier
@@ -1033,7 +1033,7 @@ Médiane (Q2) & 0.0521 & Majorité des machines saines \\
 \hline
 Score maximum & 0.9987 & Machine quasi-certaine panne \\
 \hline
-Moyenne & 0.0339 & Align\'e avec taux panne (3.39\%) \\
+Moyenne & 0.0339 & Aligné avec taux panne (3.39\%) \\
 \hline
 \'Ecart-type & 0.0956 & Dispersion significative \\
 \hline
@@ -1565,34 +1565,34 @@ Au-delà des aspects opérationnels, le projet démontre :
 \begin{enumerate}
     \item \textbf{Intégration API temps réel} : Développement d'une API REST pour ingestion des capteurs en continu et deployment des prédictions en production
     \item \textbf{Système d'alertes} : Implémentation de notifications (email, SMS, dashboard live) dès que risque atteint seuils critiques
-    \item \textbf{Réentraînement continu} : Pipeline de réentraînement automatis\'e du modèle hebdomadaire avec nouvelles données
+    \item \textbf{Réentraînement continu} : Pipeline de réentraînement automatisé du modèle hebdomadaire avec nouvelles données
 \end{enumerate}
 
 \subsection{Moyen terme (6-12 mois)}
 
 \begin{enumerate}
-    \item \textbf{Déploiement cloud} : Migration de PostgreSQL et du pipeline vers AWS RDS / Google Cloud SQL pour scalabilit\'e et haute disponibilit\'e
-    \item \textbf{Extenstion multi-sites} : G\'en\'eralisation du mod\`ele aux autres usines OCP (Jorf Lasfar, Khouribga)
-    \item \textbf{Intégration ERP/CMMS} : Lien bidirectionnel avec SAP/IFS pour cr\'eation automatis\'ee d'ordres de travail
-    \item \textbf{Explainability avanc\'ee} : Implémentation de techniques XAI (SHAP, LIME) pour explications d\'etaill\'ees aux op\'erateurs
+    \item \textbf{Déploiement cloud} : Migration de PostgreSQL et du pipeline vers AWS RDS / Google Cloud SQL pour scalabilité et haute disponibilité
+    \item \textbf{Extenstion multi-sites} : Généralisation du modèle aux autres usines OCP (Jorf Lasfar, Khouribga)
+    \item \textbf{Intégration ERP/CMMS} : Lien bidirectionnel avec SAP/IFS pour création automatisée d'ordres de travail
+    \item \textbf{Explainability avancée} : Implémentation de techniques XAI (SHAP, LIME) pour explications détaillées aux opérateurs
 \end{enumerate}
 
 \subsection{Long terme (12+ mois)}
 
 \begin{enumerate}
-    \item \textbf{RUL Prediction} : Extension vers la pr\'ediction de dur\'ee restante avant d\'efaillance (Remaining Useful Life)
-    \item \textbf{Recommandation composants} : Mod\`ele avanc\'e identifiant le composant sp\'ecifique \`a remplacer
-    \item \textbf{Optimisation stoch. des coûts} : Algorithme balançant co\^uts maintenance vs risques d'arr\^et
-    \item \textbf{Pr\'ediction d\'ependances} : Mod\`eles consid\'erant d\'efaillances en cascade entre machines
+    \item \textbf{RUL Prediction} : Extension vers la prédiction de durée restante avant défaillance (Remaining Useful Life)
+    \item \textbf{Recommandation composants} : Modèle avancé identifiant le composant spécifique à remplacer
+    \item \textbf{Optimisation stoch. des coûts} : Algorithme balançant coûts maintenance vs risques d'arrêt
+    \item \textbf{Prédiction dépendances} : Modèles considérant défaillances en cascade entre machines
 \end{enumerate}
 
 \section{Conclusion générale}
 
-Ce projet de fin d'\'etudes a d\'emontr\'e avec succ\`es comment l'int\'egration du Machine Learning, de la gestion de donn\'ees et de la Business Intelligence cr\'ee une solution authentique d'Industrie 4.0 g\'en\'eratrice de valeur tangible. Le syst\`eme de Maintenance Pr\'edictive pour l'OCP Safi repr\'esente un cas d'usage complet, combinant les comp\'etences multidisciplinaires en data science, ing\'enierie de donn\'ees et BI.
+Ce projet de fin d'études a démontré avec succès comment l'intégration du Machine Learning, de la gestion de données et de la Business Intelligence crée une solution authentique d'Industrie 4.0 génératrice de valeur tangible. Le système de Maintenance Prédictive pour l'OCP Safi représente un cas d'usage complet, combinant les compétences multidisciplinaires en data science, ingénierie de données et BI.
 
-Les performances atteintes (ROC-AUC 0.9789) et l'impact financi\`ere positif confirm\'ee confirm la pertinence des choix technologiques et de l'approche m\'ethodologique. Cette solution peut servir de fondation et de template pour d'autres initiatives de transformation num\'erique au sein du groupe OCP et au-del\`a.
+Les performances atteintes (ROC-AUC 0.9789) et l'impact financière positif confirmée confirm la pertinence des choix technologiques et de l'approche méthodologique. Cette solution peut servir de fondation et de template pour d'autres initiatives de transformation numérique au sein du groupe OCP et au-delà.
 
-En d\'efinitive, ce PFE illustre le potentiel transformateur de l'intelligence artificielle et de l'analyse de donn\'ees appliqu\'ees aux d\'efis op\'erationnels r\'eels de l'industrie manufacturière, cr\'eant ainsi un pont entre la th\'eorie acad\'emique et la pratique industrielle concr\`ete.
+En définitive, ce PFE illustre le potentiel transformateur de l'intelligence artificielle et de l'analyse de données appliquées aux défis opérationnels réels de l'industrie manufacturière, créant ainsi un pont entre la théorie académique et la pratique industrielle concrète.
 
 \begin{thebibliography}{99}
 
