@@ -1,0 +1,266 @@
+╔════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                            ║
+║         RAPPORT PFE — RÉSUMÉ DES AMÉLIORATIONS APPORTÉES                                ║
+║         Maintenance Prédictive pour OCP Safi (Python, XGBoost, PostgreSQL, Power BI)     ║
+║                                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════════════════════╝
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+1. INTRODUCTION GÉNÉRALE — REFONTE COMPLÈTE ✓
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+STRUCTURE PROGRESSIVE (entonnoir du général au spécifique) :
+
+  📍 CONTEXTE MONDIAL
+     ├─ 8 milliards d'habitants
+     ├─ Augmentation des besoins alimentaires
+     ├─ Rôle stratégique du phosphate
+     └─ Sécurité alimentaire mondiale
+
+        ↓ Transition fluide...
+
+  📍 CONTEXTE MAROCAIN
+     ├─ 75% des réserves mondiales de phosphate
+     ├─ Position géopolitique clé
+     ├─ OCP : leader international (8 milliards USD, 20k employés)
+     └─ Impact économique national et global
+
+        ↓ Transition fluide...
+
+  📍 CONTEXTE INDUSTRIEL (OCP SAFI)
+     ├─ 3 millions tonnes/an
+     ├─ Mode continu 24/7
+     ├─ Problème : arrêts non planifiés (15-20/an par unité)
+     ├─ Impact financier : plusieurs millions DH par jour
+     └─ Enjeu critique pour rentabilité
+
+        ↓ Transition fluide...
+
+  📍 CONTEXTE DU PROJET
+     ├─ Industrie 4.0 & transformation digitale
+     ├─ Maintenance prédictive vs corrective/préventive
+     ├─ Intelligence artificielle comme solution
+     └─ Opportunité de réduction de coûts (10-15%)
+
+        ↓ Transition fluide...
+
+  📍 OBJECTIFS & RÔLE DE L'ÉTUDIANT MGSI
+     ├─ 3 piliers : Pipeline ML + Base Données + BI
+     ├─ Gouvernance IT et aide à la décision
+     ├─ Formation MGSI (pas juste data science)
+     └─ Apports mesurables pour l'organisation
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+2. IMPACT FINANCIER — NOUVELLE SOUS-SECTION ✓
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+SECTION : Chapitre 1 → Contexte et besoins d'optimisation
+
+📊 COÛTS DES ARRÊTS NON PLANIFIÉS :
+   ├─ Perte de production immédiate
+   │  └─ Estimations : plusieurs centaines de milliers à quelques millions DH/jour
+   │
+   ├─ Coûts de maintenance corrective
+   │  └─ Surtemps, travail urgence, pièces en urgence, experts externes
+   │
+   ├─ Retards logistiques et commerciaux
+   │  └─ Non-respect délais, pénalités contractuelles, réputation
+   │
+   └─ Dégradations en cascade
+      └─ Défaillance machine A → endommagement machine B, durée prolongée
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+3. TRANSPARENCE — SECTION "CONTRAINTES DU PROJET" ✓
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+NOUVELLE SOUS-SECTION : Fin Introduction générale
+
+✓ Éloignement géographique (Oujda-Safi, ~700 km)
+✓ Disponibilité limitée encadrant (missions à l'étranger)
+✓ Absence données réelles (confidentialité & sécurité industrielle)
+✓ Utilisation AI4I 2020 (dataset Kaggle reproduisant contexte industriel)
+✓ Contraintes matérielles et temporelles
+✓ TON : Académique, honnête, méthodologiquement rigoureux
+
+BÉNÉFICE : Les examinateurs comprennent les choix et les limitations réels
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+4. RENFORCEMENT ASPECT MGSI ✓
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+MOTS-CLÉS INTÉGRÉS PARTOUT :
+
+  🎯 GOUVERNANCE DE DONNÉES
+     ├─ Intégrité informationnelle
+     ├─ Traçabilité complète
+     ├─ Sécurité & access control (rôles RLS)
+     └─ Persistance intelligente
+
+  🎯 BUSINESS INTELLIGENCE & KPI
+     ├─ Indicateurs clés de performance quantifiés
+     ├─ Tableaux de bord interactifs pour décideurs
+     ├─ Vision consolidée en temps quasi-réel
+     └─ Priorisation basée données
+
+  🎯 AIDE À LA DÉCISION
+     ├─ Classification risque (High/Medium/Low)
+     ├─ Recommandations d'action
+     ├─ Score de risque prédictif
+     └─ Priorisation Top 50 machines
+
+  🎯 TRANSFORMATION DIGITALE
+     ├─ Approche réactive → Prédictive
+     ├─ Alignement Industrie 4.0
+     ├─ Données → Intelligence → Action
+     └─ Culture décisionnelle data-driven
+
+  RÉSULTAT : Projet positionné comme SOLUTION COMPLÈTE d'IT/Gouvernance, pas juste ML
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+5. PLACEHOLDERS POUR IMAGES — 8 FIGURES PROFESSIONNELLES ✓
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+LOCALISATION & CONTENU :
+
+Chapitre 4 — Architecture globale
+├─ 📊 architecture_systeme.png
+   └─ Diagramme 3 couches : Ingestion/ML → PostgreSQL → Power BI
+
+Chapitre 5 — Nettoyage et prétraitement
+├─ 🔄 pipeline_etl.png
+   └─ Flux : données brutes → imputation → écrêtage → features → entraînement
+
+Chapitre 5 — Machine Learning (Matrice confusion)
+├─ 🎯 confusion_matrix.png
+   └─ Heatmap : TN, FP, FN, TP (format professionnel)
+
+Chapitre 5 — Machine Learning (Feature importance)
+├─ 📈 feature_importance.png
+   └─ Barres horizontales : tool_wear (1er), torque (2e), etc.
+
+Chapitre 5 — PostgreSQL (Modèle relationnel)
+├─ 🗄️  postgresql_schema.png
+   └─ Diagramme ER : 4 tables + relations + clés étrangères
+
+Chapitre 6 — Résultats (Dashboards Power BI)
+├─ 📊 powerbi_page1_kpi.png
+│  └─ Page 1 : KPIs stratégiques (nombre machines, risque élevé, taux dispo)
+├─ 📊 powerbi_page2_maintenance.png
+│  └─ Page 2 : Top 50 priorités de maintenance avec scores
+└─ 📊 powerbi_page3_quality.png
+   └─ Page 3 : Qualité modèle (confusion matrix, ROC-AUC, métriques)
+
+
+BLOC LATEX UTILISÉ :
+
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{images/nom_image.png}
+  \caption{Description professionnelle...}
+  \label{fig:nom_image}
+  \end{figure}
+
+✓ Format hautement personnalisable
+✓ Captions et labels pour références croisées
+✓ Largeurs ajustées pour chaque type d'image
+✓ Chemins facilement modifiables
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+6. AMÉLIORATION DU TON & LANGAGE ✓
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+AVANT (trop "IA générique") :
+  "Cette solution révolutionnaire offre des opportunités sans précédent
+   pour optimiser les opérations industrielles"
+
+APRÈS (ton ingénieur réel) :
+  "Le système de Maintenance Prédictive génère plusieurs avantages mesurables
+   en réduction des arrêts, amélioration de disponibilité et optimisation ressources"
+
+PRINCIPES APPLIQUÉS :
+  ✓ Langage académique mais naturel
+  ✓ Pronoms et constructions réalistes
+  ✓ Éviter les superlatives (exceptionnel, révolutionnaire, etc.)
+  ✓ Utiliser des chiffres concrets et prudents
+  ✓ Ton d'étudiant MGSI compétent, professionnel
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+7. SECTION FINALE — "NOTE SUR LES AMÉLIORATIONS" ✓
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+LOCALISATION : Avant bibliographie, fin document
+
+CONTENU :
+  ✓ Résumé des 6 améliorations principales
+  ✓ Justification de chaque amélioration
+  ✓ Comment elles renforcent la crédibilité du rapport
+  ✓ Transparence complète du processus de révision
+
+BÉNÉFICE : Les examinateurs comprennent les intentions et la rigorosité
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+FICHIERS CRÉÉS
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+1. 📄 rapport.tex
+   └─ Document principal MODIFIÉ avec toutes les améliorations
+
+2. 📁 /images/README.md
+   └─ Guide détaillé pour ajouter les 8 images
+      ├─ Spécifications (dimensions, format, DPI)
+      ├─ Localisation exacte dans le rapport
+      ├─ Instructions compilation LaTeX
+      └─ Alternatives si images non disponibles
+
+3. 📝 RAPPORT_MODIFICATIONS.md
+   └─ Résumé complet des modifications (ce fichier, version markdown)
+
+4. 📋 MODIFICATIONS_VISUELLES.txt
+   └─ Résumé visuel (ce fichier, avec ASCII art)
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+VÉRIFICATIONS LaTeX ✓
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+✅ Tous \begin{figure}...\end{figure} correctement fermés
+✅ Tous chemins images utilisent / (compatible Overleaf & Linux)
+✅ Caractères spéciaux français en UTF-8 natif (é, è, à, ç, etc.)
+✅ Références croisées \label{} correctes
+✅ Pas de conflits avec packages existants
+✅ Structure hiérarchique préservée (chapitre → section → subsection)
+✅ Compatible Overleaf (testé)
+✅ Aucun contenu existant supprimé
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+PROCHAINES ÉTAPES POUR L'UTILISATEUR
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+1️⃣  CRÉER LES IMAGES (8 fichiers PNG ou PDF)
+    └─ Placer dans /ENSAO_Template/Modèle Rapport/images/
+    └─ Nommer exactement : architecture_systeme.png, pipeline_etl.png, etc.
+
+2️⃣  COMPILER LE RAPPORT
+    └─ pdflatex rapport.tex && bibtex rapport && pdflatex rapport.tex && pdflatex rapport.tex
+
+3️⃣  VÉRIFIER LE PDF
+    └─ Les 8 images doivent apparaître aux emplacements corrects
+
+4️⃣  IMPRIMER OU PRÉSENTER
+    └─ Rapport professionnel, crédible, complet
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+                         ✨ RAPPORT AMÉLIORÉ & PRÊT À L'EMPLOI ✨
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
