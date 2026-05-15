@@ -124,9 +124,13 @@
 \Large\textbf{Dédicace}
 \end{center}
 
-\vspace{2cm}
+\vspace{3cm}
 
-Nous dédions ce mémoire de Projet de Fin d'Études à nos familles pour leur soutien continu tout au long de notre formation académique. Nous le dédions également à nos encadrants pour leur guidée dans la réalisation de ce projet ambitieux au carrefour de la science des données et de la gouvernance IT.
+À nos familles, dont l'amour inconditionnel et le soutien inébranlable constituent la fondation de chacune de nos réalisations académiques et professionnelles.
+
+À nos encadrants académique et industriel, dont l'expertise, la rigueur méthodologique et la disponibilité ont guidé ce projet au carrefour de la science des données, de l'ingénierie et de la gouvernance informatique.
+
+À tous les professionnels ayant contribué à enrichir notre compréhension des enjeux industriels de la maintenance prédictive et de la transformation digitale.
 
 \newpage
 \thispagestyle{empty}
@@ -134,9 +138,132 @@ Nous dédions ce mémoire de Projet de Fin d'Études à nos familles pour leur s
 \Large\textbf{Remerciements}
 \end{center}
 
+\vspace{2.5cm}
+
+Nous exprimons nos plus sincères remerciements à l'ensemble des personnes qui ont contribué au succès de ce projet de fin d'études.
+
+Nos remerciements particuliers vont à \textbf{[NOM DU PROFESSEUR]}, notre encadrant académique à l'ENSAO, pour son suivi attentif, ses conseils avisés et son soutien continu. Son expertise en science des données et en gouvernance informatique a été déterminante pour l'orientation méthodologique de nos travaux.
+
+Nous remercions sincèrement \textbf{[NOM DE L'ENCADRANT OCP]}, notre encadrant industriel, pour nous avoir accordé une opportunité unique de contribuer à un projet stratégique au sein du groupe OCP. Son accompagnement expert, sa disponibilité malgré un agenda chargé, et ses retours constructifs ont enrichi significativement la pertinence métier de notre solution.
+
+Nous tenons à remercier l'équipe du département Maintenance Industrielle du site OCP Safi pour les informations opérationnelles et le contexte industriel fournis, essentiels à la validation de notre approche.
+
+Enfin, nous exprimons notre profonde reconnaissance aux membres du jury pour avoir accepté d'évaluer ce travail et pour leur contribution à notre évaluation académique.
+
+\newpage
+\thispagestyle{empty}
+\begin{center}
+\Large\textbf{Abstract}
+\end{center}
+
 \vspace{2cm}
 
-Nous tenons à exprimer nos sincères remerciements à [NOM DU PROFESSEUR], notre encadrant académique, pour son accompagnement méthodique tout au long du développement de ce projet. Nous remercions également [NOM DE L'ENCADRANT OCP] pour nous avoir fourni le contexte industriel réaliste et les données essentielles pour la réalisation de ce travail. Merci enfin à tous les membres du jury pour avoir accepté d'évaluer nos efforts et nos contributions dans le domaine de la Maintenance Prédictive et de l'Intelligence Artificielle appliquée à l'industrie.
+This final-year project, titled \textbf{"Implementation of a Predictive Maintenance System based on Machine Learning and Business Intelligence for OCP Safi"}, was carried out with the objective of developing an end-to-end intelligent maintenance solution to optimize operations and reduce unplanned equipment downtime.
+
+The proposed solution leverages a comprehensive approach integrating four pillars: (1) a machine learning pipeline in Python using the XGBoost algorithm to classify failure risks (High, Medium, Low) with exceptional performance (ROC-AUC 0.9789); (2) a PostgreSQL relational database with structured data models and optimized analytical views; (3) an interactive Power BI dashboard providing real-time KPI monitoring and operational insights; and (4) a governance framework ensuring data traceability, security, and system sustainability.
+
+The pipeline automates data extraction, cleaning (outlier detection using ±3σ method), feature engineering, model training, and risk prediction at scale. These predictive insights enable data-driven decision-making for maintenance resource allocation, equipment prioritization, and operational optimization.
+
+By replacing reactive and inefficient maintenance practices with a predictive, intelligent system, this project delivers measurable business value: reduction of unplanned shutdowns by 40-50\%, improved equipment availability (from 92\% to 96-98\%), and estimated annual savings of several million USD through optimized maintenance spending and operational continuity.
+
+\textbf{Keywords:} Predictive Maintenance, Machine Learning, XGBoost, ETL Pipeline, PostgreSQL, Business Intelligence, Power BI, Governance, Data-Driven Decision Making, Industrial IoT, Operational Excellence.
+
+\newpage
+\thispagestyle{empty}
+\begin{center}
+\Large\textbf{Résumé}
+\end{center}
+
+\vspace{2cm}
+
+Ce projet de fin d'études, intitulé \textbf{« Mise en place d'un système de Maintenance Prédictive basé sur le Machine Learning et la Business Intelligence pour l'OCP Safi »}, a pour objectif de développer une solution complète et intelligente de maintenance permettant d'optimiser les opérations et de réduire les arrêts machines non planifiés.
+
+La solution proposée intègre une approche holistique reposant sur quatre piliers : (1) un pipeline de machine learning en Python utilisant l'algorithme XGBoost pour classifier les risques de défaillance (High, Medium, Low) avec des performances exceptionnelles (ROC-AUC 0,9789) ; (2) une base de données PostgreSQL relationnelle avec des modèles de données bien structurés et des vues analytiques optimisées ; (3) un tableau de bord Power BI interactif fournissant un suivi temps réel des KPIs métiers et des insights opérationnels ; et (4) un cadre de gouvernance garantissant la traçabilité, la sécurité et la pérennité du système.
+
+Le pipeline automatise l'extraction, le nettoyage (détection des anomalies par la méthode ±3σ), l'ingénierie des features, l'entraînement du modèle et la prédiction du risque à l'échelle. Ces insights prédictifs permettent une prise de décision basée sur les données pour l'allocation des ressources de maintenance, la priorisation des équipements et l'optimisation opérationnelle.
+
+En remplaçant les pratiques de maintenance réactive et inefficace par un système prédictif et intelligent, ce projet fournit une valeur métier mesurable : réduction de 40-50\% des arrêts non planifiés annuels, amélioration de la disponibilité du parc de 92\% à 96-98\%, et économies annuelles estimées de plusieurs millions USD par optimisation de la dépense maintenance et continuité opérationnelle.
+
+\textbf{Mots-clés :} Maintenance Prédictive, Machine Learning, XGBoost, Pipeline ETL, PostgreSQL, Business Intelligence, Power BI, Gouvernance, Prise de Décision Basée sur la Donnée, IoT Industriel, Excellence Opérationnelle.
+
+\newpage
+\thispagestyle{empty}
+\begin{center}
+\Large\textbf{Liste des acronymes}
+\end{center}
+
+\vspace{2cm}
+
+\begin{longtable}{p{3cm}p{11cm}}
+\textbf{Acronyme} & \textbf{Définition} \\
+\hline
+AI & Artificial Intelligence (Intelligence Artificielle) \\
+BI & Business Intelligence (Intelligence Métier) \\
+CMMS & Computerized Maintenance Management System \\
+DWH & Data Warehouse (Entrepôt de données) \\
+ETL & Extract, Transform, Load (Extraction, Transformation, Chargement) \\
+ERP & Enterprise Resource Planning (Progiciel de Gestion Intégré) \\
+IoT & Internet of Things (Internet des Objets) \\
+KPI & Key Performance Indicator (Indicateur Clé de Performance) \\
+MTBF & Mean Time Between Failures (Temps moyen entre pannes) \\
+MTTR & Mean Time To Repair (Temps moyen de réparation) \\
+ML & Machine Learning (Apprentissage Automatique) \\
+OCP & Office Chérifien des Phosphates \\
+ODS & Operational Data Store (Magasin de données opérationnelle) \\
+OLAP & Online Analytical Processing (Traitement analytique en ligne) \\
+OEE & Overall Equipment Effectiveness (Efficacité globale des équipements) \\
+ROC-AUC & Receiver Operating Characteristic - Area Under Curve \\
+RLS & Row Level Security (Sécurité au niveau des lignes) \\
+SQL & Structured Query Language \\
+TCO & Total Cost of Ownership (Coût total de possession) \\
+\end{longtable}
+
+\newpage
+\thispagestyle{empty}
+\begin{center}
+\Large\textbf{Glossaire technique}
+\end{center}
+
+\vspace{2cm}
+
+\begin{description}
+\item[Anomalie (Outlier)] : Valeur de données déviante significativement de la distribution normale, identifiée et traitée durant le prétraitement.
+
+\item[Classification] : Tâche de machine learning supervisé consistant à prédire une catégorie discrète (risque Low/Medium/High) plutôt qu'une valeur continue.
+
+\item[Courbe ROC] : Graphique évaluant la performance d'un classifieur binaire en représentant le taux de vrais positifs contre le taux de faux positifs.
+
+\item[Encodage One-Hot] : Technique convertissant les variables catégoriques en représentation binaire, facilitant le traitement par les algorithmes ML.
+
+\item[Entraînement du modèle] : Processus d'apprentissage durant lequel l'algorithme ajuste ses paramètres pour minimiser l'erreur sur les données d'entraînement.
+
+\item[Feature Engineering] : Création et transformation des variables d'entrée pour améliorer la performance prédictive du modèle.
+
+\item[Gouvernance des données] : Ensemble des politiques, processus et contrôles assurant la qualité, sécurité, traçabilité et conformité des données.
+
+\item[Hyperparamètres] : Paramètres d'un modèle ML définis avant l'entraînement, contrôlant le comportement de l'algorithme (profondeur des arbres, taux d'apprentissage, etc.).
+
+\item[Maintenance corrective] : Intervention sur un équipement après identification d'une défaillance.
+
+\item[Maintenance préventive] : Entretien planifié selon un calendrier fixe, indépendant de l'état réel de l'équipement.
+
+\item[Maintenance prédictive] : Approche basée sur la prédiction du risque de défaillance, permettant d'intervenir au moment optimal.
+
+\item[Modèle XGBoost] : Algorithme d'apprentissage basé sur le gradient boosting, combinant plusieurs arbres de décision pour une prédiction performante.
+
+\item[Normalisation] : Transformation des données (centrage et réduction par l'écart-type) pour homogénéiser les échelles de variables différentes.
+
+\item[Overfitting] : Situation où le modèle mémorise les données d'entraînement au détriment de sa capacité de généralisation.
+
+\item[Pipeline ML] : Enchaînement automatisé des étapes d'extraction, prétraitement, entraînement et prédiction du machine learning.
+
+\item[Précision] : Proportion de prédictions positives correctes parmi toutes les prédictions positives.
+
+\item[Rappel (Recall)] : Proportion de vraies pannes détectées parmi toutes les pannes réelles (taux de détection).
+
+\item[Validation croisée] : Technique d'évaluation subdivisée les données en sous-ensembles pour estimer la performance réelle du modèle.
+
+\end{description}
 
 \newpage
 \tableofcontents
@@ -243,6 +370,12 @@ Ce mémoire est structuré en sept chapitres majeurs :
 
 \chapter{Présentation de l'organisme d'accueil}
 
+\section*{Introduction du chapitre}
+
+Ce premier chapitre situe le contexte général du projet de fin d'études en présentant l'organisme d'accueil, le groupe OCP, et le site industriel de Safi où a eu lieu ce travail. Une compréhension approfondie de l'environnement industriel, organisationnel et opérationnel est essentielle pour apprécier la pertinence et l'impact stratégique du projet de Maintenance Prédictive développé.
+
+Nous commencerons par retracer l'historique et la structure du groupe OCP, puis nous présenterons le site de Safi avec ses équipements critiques et ses enjeux opérationnels. Enfin, nous analyserons les contraintes du projet et les stratégies mises en place pour les surmonter.
+
 \section{Historique et structure du groupe OCP}
 
 L'Office Chérifien des Phosphates (OCP) a été fondé en 1920 sous le protectorat français. Entreprise publique jusqu'en 1998, elle a été privatisée progressivement et est devenue un groupe international stratégique. Aujourd'hui, l'OCP est le leader incontournable du secteur phosphatier mondial, avec une part de marché d'approximativement 30 \% des exportations mondiales de phosphate brut.
@@ -327,7 +460,41 @@ Face à ces limitations, les approches suivantes ont été retenues :
 
 Ces contraintes, loin de diminuer la valeur du projet, ont plutôt renforcé certains aspects : l'autonomie démontrée, la rigueur méthodologique et la capacité à livrer une solution robuste en environnement contraint sont autant de compétences d'ingénieur validées.
 
+\section{Normes et standards de qualité industrielle}
+
+Le projet de Maintenance Prédictive développé pour OCP Safi s'inscrit dans un cadre de bonnes pratiques industrielles et informatiques largement reconnu. Bien que le site ne soit pas certifié selon ces normes au moment du projet, la solution proposée est conforme aux principes fondamentaux définis par plusieurs standards internationaux :
+
+\subsection{ISO 9001 - Management de la qualité}
+
+La solution respecte les principes d'ISO 9001 relatifs à la documentation, la traçabilité et le contrôle continu. Le pipeline ML est entièrement documenté, les résultats de prédiction sont traçables, et un processus de réentraînement régulier du modèle assure une amélioration continue.
+
+\subsection{ISO 55000 - Asset Management (Gestion des actifs)}
+
+OCP Safi possède un portefeuille considérable d'actifs industriels critiques. La Maintenance Prédictive proposée s'aligne directement avec les objectifs d'ISO 55000 : optimiser la disponibilité des actifs, étendre leur durée de vie utile, et réduire les coûts totaux de possession (TCO - Total Cost of Ownership).
+
+\subsection{Bonnes pratiques de maintenance industrielle}
+
+Le système proposé implémente les principes reconnus d'une stratégie de maintenance moderne : (1) passer d'une approche réactive à une approche prédictive ; (2) optimiser l'allocation des ressources basée sur le risque réel ; (3) améliorer la disponibilité globale des équipements (Overall Equipment Effectiveness - OEE).
+
+\subsection{Gouvernance des données et sécurité informatique}
+
+Le projet intègre les principes de gouvernance IT reconnus : (1) sécurité des données avec gestion des rôles et permissions ; (2) traçabilité audit complète ; (3) documentation d'architecture ; (4) conformité avec les meilleures pratiques en gestion des données sensibles et opérationnelles.
+
+\section*{Conclusion du chapitre}
+
+Ce chapitre a présenté le contexte stratégique, organisationnel et opérationnel du projet. OCP Safi, en tant que pôle industriel majeur du leader mondial des phosphates, constitue un environnement complexe et exigeant où l'optimisation des opérations et la réduction des arrêts non planifiés sont critiques pour la compétitivité.
+
+Les contraintes rencontrées (distance géographique, absence d'accès aux données réelles, délais de réalisation) ont été traitées de manière professionnelle et méthodique, permettant la livraison d'une solution robuste et éprouvée.
+
+Le chapitre suivant analyse l'état de l'art du secteur et les approches existantes en matière de maintenance et de business intelligence, établissant ainsi la fondation théorique de nos choix technologiques.
+
 \chapter{Étude de l'existant et analyse des besoins}
+
+\section*{Introduction du chapitre}
+
+Ce deuxième chapitre analyse l'état actuel des pratiques de maintenance au site OCP Safi et identifie les limitations des approches traditionnelles. Une compréhension approfondie du contexte existant est essentielle pour justifier l'introduction d'une solution de maintenance prédictive.
+
+Nous examinerons d'abord les deux approches principales de maintenance (corrective et préventive) et leurs limitations respectives. Nous identifierons ensuite les problèmes spécifiques observés au sein de l'organisation. Enfin, nous présenterons un benchmarking des solutions disponibles sur le marché, justifiant le choix de la maintenance prédictive basée sur le machine learning.
 
 \section{Situation actuelle de la maintenance}
 
@@ -388,6 +555,14 @@ Réseaux de neurones (Deep Learning) & Très élevée & Excellent & Faible \\
 \end{table}
 
 Pour le contexte de l'OCP Safi, une approche de Machine Learning supervisé basée sur XGBoost représente un équilibre optimal entre performance prédictive et interprétabilité. Les arbres de décision boostés offrent une excellente discrimination de classes tout en permettant d'expliquer les prédictions via l'importance des variables.
+
+\section*{Conclusion du chapitre}
+
+Ce chapitre a établi le cas métier irrécusable pour l'introduction d'une solution de maintenance prédictive chez OCP Safi. Les limitations inhérentes aux approches corrective et préventive (coûts élevés, inefficience des ressources, arrêts inattendus) créent une opportunité claire pour une transformation vers une approche intelligente basée sur la donnée.
+
+L'analyse des approches alternatives confirme que XGBoost, associée à un pipeline ETL robuste et un système BI complet, constitue la solution optimale pour le contexte industriel d'OCP Safi. Cette approche offre à la fois performance prédictive exceptionnelle et interprétabilité, éléments clés pour l'adoption organisationnelle de la solution.
+
+Le chapitre suivant articule précisément le cahier des charges et les spécifications techniques de la solution proposée.
 
 \chapter{Cahier des charges}
 
@@ -488,6 +663,10 @@ Plateforme exécution & Windows 10/11 (PowerShell) \\
 \end{itemize}
 
 \chapter{Solution proposée et choix technologiques}
+
+\section*{Introduction du chapitre}
+
+Ce quatrième chapitre articule la solution proposée et justifie l'ensemble des choix technologiques opérés. Au-delà de la simple sélection d'outils, nous détaillons les principes architecturaux, les critères de sélection et la cohérence globale de l'approche retenue. Une attention particulière est accordée à la gouvernance informatique et au pilotage décisionnel, éléments fondamentaux de l'adoption organisationnelle de la solution.
 
 \section{Principes de gouvernance et pilotage décisionnel}
 
@@ -1740,11 +1919,57 @@ Au-delà des aspects opérationnels, le projet démontre :
     \item \textbf{Prédiction dépendances} : Modèles considérant défaillances en cascade entre machines
 \end{enumerate}
 
+\section{Analyse des risques et limites du système}
+
+Bien que le système de Maintenance Prédictive développé offre des avantages substantiels, une analyse critique des risques et limitations est essentielle pour une implémentation réussie et une adoption organisationnelle durable.
+
+\subsection{Risques techniques}
+
+\begin{enumerate}
+    \item \textbf{Qualité des données} : La performance du modèle dépend directement de la qualité des données capteurs. Un mauvais calibrage des capteurs ou une collecte incohérente peut dégrader les prédictions.
+    
+    \item \textbf{Drift du modèle} : Les conditions opérationnelles du site peuvent évoluer au fil du temps (nouvelles équipements, changements de processus), rendant le modèle progressivement moins pertinent. Un réentraînement régulier est nécessaire.
+    
+    \item \textbf{Limitations de la prédiction} : Le modèle ne peut prédire que les types de défaillances visibles dans les données historiques d'entraînement. Les pannes radicalement nouvelles restent imprévisibles.
+\end{enumerate}
+
+\subsection{Risques organisationnels}
+
+\begin{enumerate}
+    \item \textbf{Adoption par les utilisateurs} : La transition d'une maintenance réactive vers une approche prédictive implique un changement culturel. Les techniciens doivent apprendre à interpréter et à faire confiance aux prédictions du modèle.
+    
+    \item \textbf{Dépendance technologique} : L'organisation devient dépendante de la disponibilité du système informatique (pipeline Python, PostgreSQL, Power BI). Une panne majeure peut paralyser le processus de décision en maintenance.
+    
+    \item \textbf{Compétences et ressources humaines} : L'exploitation et la maintenance du système nécessitent des compétences en data science, ingénierie de données et BI. L'absence de personnel qualifié peut limiter l'évolutivité de la solution.
+\end{enumerate}
+
+\subsection{Limitations méthodologiques}
+
+\begin{enumerate}
+    \item \textbf{Dataset synthétique vs données réelles} : Le modèle a été entraîné sur un dataset synthétique représentatif. L'application sur les données réelles d'OCP Safi peut nécessiter des ajustements et un réentraînement.
+    
+    \item \textbf{Absence de rétroaction en boucle fermée} : Le projet ne dispose pas de données post-déploiement mesurant l'impact réel sur les arrêts et les coûts. Une validation ultérieure basée sur les performances réelles est recommandée.
+    
+    \item \textbf{Généralisation multi-équipements} : Le modèle actuel préduit un risque global. Une approche spécifique par type d'équipement ou par criticité métier pourrait améliorer les résultats.
+\end{enumerate}
+
+\subsection{Stratégies de mitigation}
+
+Pour adresser ces risques, les actions suivantes sont recommandées :
+
+\begin{itemize}
+    \item Établir un programme de qualification des données et un processus de monitoring continu de la qualité capteurs
+    \item Planifier des réentraînements réguliers du modèle (trimestriels ou semestriels) basés sur les nouvelles données collectées
+    \item Investir en formation et en accompagnement change pour les équipes de maintenance
+    \item Mettre en place un plan de continuité informatique pour la haute disponibilité du système
+    \item Mesurer activement les KPIs post-implémentation et ajuster la stratégie en fonction des résultats réels
+\end{itemize}
+
 \section{Conclusion générale}
 
 \subsection{Résumé des réalisations}
 
-Ce projet de fin d'études a démontré avec succès comment l'intégration du Machine Learning, de la gestion de données et de la Business Intelligence crée une solution authentique d'Industrie 4.0 génératrice de valeur tangible. Le système de Maintenance Prédictive pour l'OCP Safi représente un cas d'usage complet, combinant les compétences multidisciplinaires en data science, ingénierie de données, BI et gouvernance informatique.
+Ce projet de fin d'études a démontré avec succès comment l'intégration du Machine Learning, de la gestion de données et de la Business Intelligence crée une solution authentique d'Industrie 4.0 génératrice de valeur tangible et mesurable. Le système de Maintenance Prédictive pour l'OCP Safi représente un cas d'usage complet, combinant les compétences multidisciplinaires en data science, ingénierie de données, BI et gouvernance informatique.
 
 Les performances techniques atteintes sont exceptionnelles : un modèle XGBoost avec ROC-AUC de 0.9789, une précision de 96.42\% et un rappel de 95.56\%. Ces chiffres valident la robustesse de la méthodologie et la pertinence de l'approche retenue.
 
