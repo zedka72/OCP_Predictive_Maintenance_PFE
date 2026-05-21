@@ -33,7 +33,7 @@ from sklearn.preprocessing   import StandardScaler
 from sklearn.metrics         import (
     accuracy_score, precision_score, recall_score,
     f1_score, roc_auc_score, classification_report,
-    confusion_matrix,
+    confusion_matrix, roc_curve
 )
 import xgboost as xgb
 
@@ -277,7 +277,8 @@ def analyser_seuils_risque(y_test, y_proba) -> dict:
 # ÉTAPE 7 — Enregistrement du run dans model_runs
 # ══════════════════════════════════════════════════════════════
 def sauvegarder_execution(metriques: dict, seuils: dict,
-                          nb_entrainement: int, nb_test: int) -> str:
+                          nb_entrainement: int, nb_test: int,
+                          y_test=None, y_proba=None) -> str:
     """
     Insère les résultats du run d'entraînement dans la table model_runs.
     Retourne l'identifiant unique du run (UUID).
@@ -305,7 +306,40 @@ def sauvegarder_execution(metriques: dict, seuils: dict,
         json.dumps(PARAMS_XGB),
     ))
 
-    id_run = str(curseur.fetchone()[0])
+    ligne = curseur.fetchone()
+    if ligne is None:
+        raise RuntimeError(
+            "INSERT INTO model_runs n'a retourné aucun run_id. "
+            "Vérifiez que la table model_runs existe et que la transaction n'est pas en erreur."
+        )
+    id_run = str(ligne[0])
+    
+    # Enregistrement des points de la courbe ROC
+    if y_test is not None and y_proba is not None:
+        journal.info("Enregistrement des points de la courbe ROC...")
+        fpr, tpr, thresholds = roc_curve(y_test, y_proba)
+        
+        # Scikit-learn met le 1er threshold à np.inf, ce qui fait planter PostgreSQL NUMERIC
+        thresholds = np.clip(thresholds, 0.0, 1.0)
+        
+        # On limite le nombre de points pour ne pas surcharger Power BI (ex: max 200 points)
+        if len(fpr) > 200:
+            indices = np.linspace(0, len(fpr) - 1, 200, dtype=int)
+            fpr = fpr[indices]
+            tpr = tpr[indices]
+            thresholds = thresholds[indices]
+            
+        donnees_roc = [
+            (id_run, float(f), float(t), float(th))
+            for f, t, th in zip(fpr, tpr, thresholds)
+        ]
+        
+        curseur.executemany("""
+            INSERT INTO roc_curve_data (run_id, fpr, tpr, threshold)
+            VALUES (%s, %s, %s, %s)
+        """, donnees_roc)
+        journal.info("  %d points de la courbe ROC insérés.", len(donnees_roc))
+        
     connexion.commit()
     curseur.close()
     connexion.close()
@@ -351,6 +385,8 @@ def main():
         metriques_xgb, seuils,
         nb_entrainement=len(X_entr),
         nb_test=len(X_test),
+        y_test=y_test,
+        y_proba=y_proba
     )
 
     # Résumé final

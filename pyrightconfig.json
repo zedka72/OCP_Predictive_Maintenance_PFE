@@ -17,5 +17,10 @@
     "reportMissingModuleSource": "none",
     "extraPaths": [
         "."
+    ],
+    "executionEnvironments": [
+        {
+            "root": "."
+        }
     ]
 }

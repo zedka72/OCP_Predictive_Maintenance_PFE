@@ -1,8 +1,30 @@
 -- ==========================================================
--- dax_measures_FINAL.txt — LE BON FICHIER À UTILISER
--- Séparateur : Virgule (,)
--- Tables : 'public nom_de_la_table'
+-- dax_measures_FINAL.txt — VERSION CORRIGÉE v2
+-- Séparateur décimal : Virgule (,)
+-- Tables Power BI : 'public predictions', 'public model_runs',
+--                   'public raw_sensor_readings',
+--                   'public cleaned_sensor_readings'
+-- Corrections v2 :
+--   - F1 / Recall / Precision : lus depuis la table avec filtre
+--     sur le RUN_ID le plus récent (robuste aux anciens runs)
+--   - Matrice de confusion : Vrais Négatifs corrigé (Low+Medium sains)
+--   - Pct High Risk formaté en pourcentage propre
+--   - Nouvelles mesures : Precision, Accuracy, Gain Estimé
+--   - Colonne calculée Urgence améliorée
 -- ==========================================================
+
+
+-- ═══════════════════════════════════════════════════════════
+-- ÉTAPE 0 — MESURE AUXILIAIRE : ID du dernier run
+-- (Utilisée en interne par les autres mesures)
+-- ═══════════════════════════════════════════════════════════
+
+_Run ID Dernier =
+CALCULATE(
+    FIRSTNONBLANK('public model_runs'[run_id], 1),
+    TOPN(1, ALL('public model_runs'), 'public model_runs'[run_date], DESC)
+)
+
 
 -- ═══════════════════════════════════════════════════════════
 -- PAGE 1 — KPIs GLOBAUX
@@ -38,6 +60,16 @@ DIVIDE([Machines Medium Risk], [Total Machines], 0) * 100
 Pct Low Risk =
 DIVIDE([Machines Low Risk], [Total Machines], 0) * 100
 
+-- Affichage formaté avec symbole % pour les cartes KPI
+Pct High Risk Label =
+FORMAT(DIVIDE([Machines High Risk], [Total Machines], 0) * 100, "0.00") & " %"
+
+Pct Medium Risk Label =
+FORMAT(DIVIDE([Machines Medium Risk], [Total Machines], 0) * 100, "0.00") & " %"
+
+Pct Low Risk Label =
+FORMAT(DIVIDE([Machines Low Risk], [Total Machines], 0) * 100, "0.00") & " %"
+
 Taux Panne Reel =
 DIVIDE(
     CALCULATE(
@@ -56,61 +88,188 @@ MAX('public predictions'[risk_score])
 
 
 -- ═══════════════════════════════════════════════════════════
--- PAGE 3 — PERFORMANCE MODÈLE
+-- PAGE 3 — PERFORMANCE MODÈLE (CORRIGÉE)
+-- Lit les métriques depuis model_runs en filtrant sur le
+-- dernier run_date — robuste aux anciens runs incorrects
 -- ═══════════════════════════════════════════════════════════
 
 ROC AUC Dernier Run =
-CALCULATE(
-    MAX('public model_runs'[roc_auc]),
-    TOPN(1, 'public model_runs', 'public model_runs'[run_date], DESC)
-)
+VAR dernierRun =
+    CALCULATE(
+        MAX('public model_runs'[run_date]),
+        ALL('public model_runs')
+    )
+RETURN
+    CALCULATE(
+        MAX('public model_runs'[roc_auc]),
+        'public model_runs'[run_date] = dernierRun
+    )
 
 F1 Score Dernier Run =
-CALCULATE(
-    MAX('public model_runs'[f1_score]),
-    TOPN(1, 'public model_runs', 'public model_runs'[run_date], DESC)
-)
+VAR dernierRun =
+    CALCULATE(
+        MAX('public model_runs'[run_date]),
+        ALL('public model_runs')
+    )
+RETURN
+    CALCULATE(
+        MAX('public model_runs'[f1_score]),
+        'public model_runs'[run_date] = dernierRun
+    )
 
 Recall Dernier Run =
-CALCULATE(
-    MAX('public model_runs'[recall]),
-    TOPN(1, 'public model_runs', 'public model_runs'[run_date], DESC)
+VAR dernierRun =
+    CALCULATE(
+        MAX('public model_runs'[run_date]),
+        ALL('public model_runs')
+    )
+RETURN
+    CALCULATE(
+        MAX('public model_runs'[recall]),
+        'public model_runs'[run_date] = dernierRun
+    )
+
+Precision Dernier Run =
+VAR dernierRun =
+    CALCULATE(
+        MAX('public model_runs'[run_date]),
+        ALL('public model_runs')
+    )
+RETURN
+    CALCULATE(
+        MAX('public model_runs'[precision_score]),
+        'public model_runs'[run_date] = dernierRun
+    )
+
+Accuracy Dernier Run =
+VAR dernierRun =
+    CALCULATE(
+        MAX('public model_runs'[run_date]),
+        ALL('public model_runs')
+    )
+RETURN
+    CALCULATE(
+        MAX('public model_runs'[accuracy]),
+        'public model_runs'[run_date] = dernierRun
+    )
+
+-- Labels formatés pour cartes KPI (affichage propre)
+ROC AUC Label =
+FORMAT([ROC AUC Dernier Run], "0.0000")
+
+F1 Score Label =
+FORMAT([F1 Score Dernier Run], "0.0000")
+
+Recall Label =
+FORMAT([Recall Dernier Run], "0.0000")
+
+Precision Label =
+FORMAT([Precision Dernier Run], "0.0000")
+
+-- Nombre de runs d'entraînement (traçabilité)
+Nombre de Runs =
+COUNTROWS('public model_runs')
+
+-- Date du dernier entraînement
+Date Dernier Run =
+FORMAT(
+    CALCULATE(
+        MAX('public model_runs'[run_date]),
+        ALL('public model_runs')
+    ),
+    "DD/MM/YYYY HH:MM"
 )
 
 
 -- ═══════════════════════════════════════════════════════════
--- PAGE 3 — MATRICE DE CONFUSION
+-- PAGE 3 — MATRICE DE CONFUSION v3 (ALIGNÉE RAPPORT)
+-- -------------------------------------------------------
+-- VERSION v3 (RECOMMANDÉE pour correspondre au rapport LaTeX)
+-- Utilise risk_score >= 0.50 comme sklearn — même seuil,
+-- même logique → donne TP=313, FP=25, FN=14, TN=1981
+-- -------------------------------------------------------
+-- VERSION v2 (alternative opérationnelle, seuil 0.60)
+-- Utilise risk_level = "High" → donne TP=323, FP=111
 -- ═══════════════════════════════════════════════════════════
+
+-- ── UTILISER CES 4 MESURES (version rapport, seuil 0.50) ──
 
 Vrais Positifs =
 CALCULATE(
     COUNTROWS('public predictions'),
-    'public predictions'[risk_level] = "High",
+    'public predictions'[risk_score] >= 0.50,
     'public predictions'[actual_failure] = 1
 )
 
 Faux Positifs =
 CALCULATE(
     COUNTROWS('public predictions'),
-    'public predictions'[risk_level] = "High",
+    'public predictions'[risk_score] >= 0.50,
     'public predictions'[actual_failure] = 0
 )
 
 Vrais Negatifs =
 CALCULATE(
     COUNTROWS('public predictions'),
-    'public predictions'[risk_level] = "Low",
+    'public predictions'[risk_score] < 0.50,
     'public predictions'[actual_failure] = 0
 )
 
 Faux Negatifs =
 CALCULATE(
     COUNTROWS('public predictions'),
-    'public predictions'[risk_level] <> "High",
+    'public predictions'[risk_score] < 0.50,
     'public predictions'[actual_failure] = 1
 )
 
-Taux Faux Positifs =
+-- ── Variante opérationnelle (seuil 0.60 = risk_level=High) ──
+-- Décommenter si on veut l'alignement métier plutôt que ML
+
+-- Vrais Positifs v2 =
+-- CALCULATE(COUNTROWS('public predictions'),
+--     'public predictions'[risk_level] = "High",
+--     'public predictions'[actual_failure] = 1)
+
+-- Faux Positifs v2 =
+-- CALCULATE(COUNTROWS('public predictions'),
+--     'public predictions'[risk_level] = "High",
+--     'public predictions'[actual_failure] = 0)
+
+-- Vrais Negatifs v2 =
+-- CALCULATE(COUNTROWS('public predictions'),
+--     'public predictions'[risk_level] <> "High",
+--     'public predictions'[actual_failure] = 0)
+
+-- Faux Negatifs v2 =
+-- CALCULATE(COUNTROWS('public predictions'),
+--     'public predictions'[risk_level] <> "High",
+--     'public predictions'[actual_failure] = 1)
+
+-- Métriques dérivées de la matrice de confusion (calculées en DAX)
+Recall DAX =
+DIVIDE([Vrais Positifs], [Vrais Positifs] + [Faux Negatifs], 0)
+
+Precision DAX =
+DIVIDE([Vrais Positifs], [Vrais Positifs] + [Faux Positifs], 0)
+
+F1 DAX =
+DIVIDE(
+    2 * [Precision DAX] * [Recall DAX],
+    [Precision DAX] + [Recall DAX],
+    0
+)
+
+Accuracy DAX =
+DIVIDE(
+    [Vrais Positifs] + [Vrais Negatifs],
+    [Vrais Positifs] + [Vrais Negatifs] + [Faux Positifs] + [Faux Negatifs],
+    0
+)
+
+Taux Detection Pannes =
+FORMAT([Recall DAX] * 100, "0.00") & " %"
+
+Taux Fausse Alerte =
 DIVIDE([Faux Positifs], [Faux Positifs] + [Vrais Negatifs], 0) * 100
 
 Taux Faux Negatifs =
@@ -137,15 +296,77 @@ DIVIDE(
 Temp Diff Moyenne =
 AVERAGE('public cleaned_sensor_readings'[temp_diff])
 
+Power Meca Moyen =
+AVERAGE('public cleaned_sensor_readings'[power])
+
 
 -- ═══════════════════════════════════════════════════════════
--- COLONNE CALCULÉE (pour Histogramme Risk Score)
+-- PAGE 2 — AIDE À LA DÉCISION
 -- ═══════════════════════════════════════════════════════════
 
+-- Estimation du gain financier (DH) — hypothèses conservatrices :
+-- Coût moyen panne corrective non anticipée : 500 000 DH
+-- Coût inspection préventive : 30 000 DH
+-- Formule : TP * 500000 - FP * 30000
+Gain Estimé DH =
+([Vrais Positifs] * 500000) - ([Faux Positifs] * 30000)
+
+Gain Estimé Label =
+FORMAT([Gain Estimé DH], "# ##0") & " DH"
+
+-- Ratio Maintenance Préventive / Totale
+Ratio Preventif =
+DIVIDE([Machines High Risk] + [Machines Medium Risk], [Total Machines], 0) * 100
+
+-- Score de criticité composite pour tri dashboard
+-- (combinaison risk_score pondéré par usure outil)
+Score Criticite Moyen =
+AVERAGEX(
+    FILTER(
+        'public predictions',
+        'public predictions'[risk_level] = "High"
+    ),
+    'public predictions'[risk_score] *
+    (1 + 'public predictions'[tool_wear_min] / 250)
+)
+
+
+-- ═══════════════════════════════════════════════════════════
+-- COLONNES CALCULÉES
+-- (À créer dans la table 'public predictions')
+-- ═══════════════════════════════════════════════════════════
+
+-- Colonne : Histogramme Risk Score
 Risk Score Bin =
 SWITCH(
     TRUE(),
     'public predictions'[risk_score] < 0.30, "1. Low (< 0.30)",
     'public predictions'[risk_score] < 0.60, "2. Medium (0.30-0.60)",
     "3. High (>= 0.60)"
+)
+
+-- Colonne : Niveau d'urgence d'intervention (corrigée v2)
+-- Logique : High + usure > 150 → URGENT, sinon PRIORITAIRE / SURVEILLANCE
+Intervention Urgency =
+SWITCH(
+    TRUE(),
+    'public predictions'[risk_level] = "High"
+        && 'public predictions'[tool_wear_min] > 150,
+    "URGENT",
+    'public predictions'[risk_level] = "High"
+        && 'public predictions'[tool_wear_min] <= 150,
+    "PRIORITAIRE",
+    'public predictions'[risk_level] = "Medium",
+    "A SURVEILLER",
+    "OK"
+)
+
+-- Colonne : Couleur du niveau de risque (pour mise en forme conditionnelle)
+Risk Color =
+SWITCH(
+    'public predictions'[risk_level],
+    "High",   "#C0392B",
+    "Medium", "#E67E22",
+    "Low",    "#27AE60",
+    "#95A5A6"
 )

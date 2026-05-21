@@ -83,7 +83,7 @@ def nettoyer_et_enrichir(df: pd.DataFrame) -> pd.DataFrame:
 
     # 2a. Imputation des valeurs manquantes numériques par la médiane
     colonnes_numeriques = df.select_dtypes(include=np.number).columns
-    nb_manquants = df[colonnes_numeriques].isna().sum()
+    nb_manquants: pd.Series = df[colonnes_numeriques].isna().sum()
     if nb_manquants.sum() > 0:
         journal.warning("  Valeurs manquantes détectées : %s",
                         nb_manquants[nb_manquants > 0].to_dict())

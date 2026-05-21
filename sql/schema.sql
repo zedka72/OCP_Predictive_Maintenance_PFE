@@ -92,6 +92,21 @@ CREATE INDEX idx_runs_date          ON model_runs (run_date DESC);
 CREATE INDEX idx_runs_auc           ON model_runs (roc_auc DESC);
 
 -- ──────────────────────────────────────────────────────────
+-- 3.bis ROC CURVE DATA
+--    Points (FPR, TPR) pour la courbe ROC du dernier run
+-- ──────────────────────────────────────────────────────────
+DROP TABLE IF EXISTS roc_curve_data CASCADE;
+
+CREATE TABLE roc_curve_data (
+    run_id          UUID            REFERENCES model_runs(run_id) ON DELETE CASCADE,
+    fpr             NUMERIC(6,4),
+    tpr             NUMERIC(6,4),
+    threshold       NUMERIC(6,4)
+);
+
+CREATE INDEX idx_roc_run            ON roc_curve_data (run_id);
+
+-- ──────────────────────────────────────────────────────────
 -- 4. PREDICTIONS
 --    Résultats du batch scoring
 -- ──────────────────────────────────────────────────────────
