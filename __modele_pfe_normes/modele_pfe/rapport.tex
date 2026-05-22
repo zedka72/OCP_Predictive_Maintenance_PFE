@@ -1,0 +1,496 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[english,french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[outerbars]{changebar}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage{makeidx}
+\usepackage[colorlinks]{hyperref}
+\usepackage[acronym]{glossaries}
+\usepackage{geometry}
+\usepackage[titletoc]{appendix}
+\usepackage[export]{adjustbox}
+
+
+%\selectlanguage{francais}
+
+\makeglossaries
+\makeindex
+
+
+
+
+\geometry {vmargin=3cm}
+
+%\newacronym[\glsshortpluralkey=cas,\glslongpluralkey=contrived
+%acronyms]{aca}{aca}{a contrived acronym}
+%
+%\newglossaryentry{sample}{name={sample},description={a sample entry}}
+%
+%\addto\captionsfrench{
+%\renewcommand{\acronymname}{Acronymes}%
+%}
+%
+%\addto\captionsfrench{
+%\renewcommand{\glossarymname}{Glossaire}%
+%}
+
+\setcounter{secnumdepth}{3}
+
+\fancyhf{}
+\fancyhead[LE]{\slshape \rightmark} %section
+\fancyhead[RE]{\thepage}
+\fancyhead[RO]{\slshape \leftmark} % chapter
+\fancyhead[LO]{\thepage}
+\pagestyle{fancy}
+
+\lfoot{\tiny\textsl{MGSI - ENSAO}}
+
+
+
+\cfoot{\tiny\textsl{année 2025 - 2026}}
+
+
+
+
+\rfoot{\tiny\textsl{mémoire PFE}}
+
+\addto\captionsfrench{
+\renewcommand{\listfigurename}{Liste des figures}%
+}
+
+
+
+\begin{document}
+
+
+
+
+
+
+
+
+
+
+\newcommand{\bluefirst}[1]{\textcolor{blue}{#1}}
+
+
+
+\begin{titlepage}
+\newgeometry{top=1cm,left=1.5cm,bottom=1cm,right=1.5cm}
+
+\noindent
+\begin{center}
+%\setmainfont{Comic Sans MS}
+\includegraphics[width=0.2\linewidth,valign=c]{ump.png}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+    \centering
+    \textbf{ROYAUME DU MAROC}\\
+     \vspace{0.5\baselineskip}
+    \textbf{UNIVERSITE MOHAMMED PREMIER} \\
+    \vspace{0.5\baselineskip}
+    \textbf{\bluefirst{E}cole \bluefirst{N}ationale \bluefirst{d}es \bluefirst{S}ciences \bluefirst{A}ppliquées}
+    \vspace{0.5\baselineskip} \\
+    \textbf{Oujda - Maroc}
+    \end{minipage}\hfill
+    \includegraphics[width=0.25\linewidth,valign=c]{ensa.png}
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+
+%\textbf{{\fontsize{19pt}{22.8pt}\selectfont \bfseries \setmainfont{Times New Roman} Mémoire de Fin d Etudes}}
+\textbf{{\fontsize{19pt}{22.8pt} Mémoire de Projet de Fin d'Etudes}}
+
+
+        
+        \vspace{2cm}
+         
+        {\fontsize{14}{17}\selectfont \textbf{Filière :} Management et Gouvernance des Systèmes d'Information}
+        \vspace{1.5cm}
+        \hrule
+        \vspace{0.1cm}
+        \hrulefill\par
+        \vspace{0.5cm}
+        \LARGE Intégration ERP-CRM et création d'un tableau de bord décisionnel sous Power BI pour améliorer la gestion des données client et le pilotage commercial.\par
+        \vspace{0.5cm}
+        \hrulefill
+        \vspace{0.1cm}
+        \hrule
+        
+
+\end{center}
+\vspace{1cm}
+\begin{center}
+        \textbf {Réalisé par :}\bigskip
+
+            Ihab BIZIG\par
+
+\end{center}
+\vspace{1cm}
+
+
+\textbf {Membres de jury :}\hfill\parbox[t]{6cm}{\textbf{Encadré par:\\}\textbf{Pr}. Mohamed Amine MADANI}\par
+\textbf {Pr}. Hamza CHEHABI\par
+\textbf {Pr}. Khadija ALAOUI\par
+\textbf {Pr}. Mohamed Amine MADANI\par
+
+
+\vfill
+\begin{center}
+ \hrulefill\par
+ \vspace{0.5cm}
+    Année Universitaire \par
+    2025/2026
+\end{center}
+
+\end{titlepage}
+
+
+\restoregeometry
+\newpage
+\thispagestyle {empty}
+    \begin {center}
+    \Large\textbf {Dédicace}
+    \end {center}
+ textes.....
+\newpage
+\thispagestyle {empty}
+    \begin {center}
+    \Large\textbf {Remerciements}
+    \end {center}
+ textes.....
+\newpage
+
+  \selectlanguage {francais}
+   \begin {abstract}
+textes...
+   \end {abstract}
+
+\newpage
+    \selectlanguage {english}
+    \begin {abstract}
+
+    \end {abstract}
+
+\newpage
+
+\selectlanguage {french}
+
+
+\tableofcontents{}
+
+
+
+
+\thispagestyle {empty}
+
+\newpage
+
+\listoffigures  % table des figures
+
+\addcontentsline{toc}{chapter}{Liste des figures}
+
+\thispagestyle {empty}
+
+\newpage
+\thispagestyle {empty}
+\listoftables   % table des tableaux
+\addcontentsline{toc}{chapter}{Liste des tableaux}
+\thispagestyle
+{empty}
+
+\printglossary[type=\acronymtype]
+\addcontentsline{toc}{chapter}{Acronymes}
+
+\thispagestyle {empty}
+
+
+
+\newpage
+
+\chapter* {Introduction}
+\thispagestyle {plain}
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
+mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
+semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem
+ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra
+nulla ut metus varius laoreet %\gls{aca}. Quisque rutrum. Aenean
+imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper
+ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus
+eget condimentum rhoncus, sem quam semper libero, sit amet
+adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus
+pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt
+tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis
+ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo.
+Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
+Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+quis gravida magna mi a libero. Fusce vulputate eleifend sapien.
+Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id,
+metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis
+hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci
+luctus et ultrices posuere cubilia Curae; In ac dui quis mi
+consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor,
+suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam
+ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget,
+posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum
+rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero.
+Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam
+nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede.
+Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo
+pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec
+neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis,
+nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere
+imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa.
+Sed cursus turpis vitae tortor. Donec posuere vulputate arcu.
+Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in
+faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam,
+nisi quis porttitor congue, elit erat euismod orci, ac \cite{vassiliadis2000}
+
+
+
+
+
+\chapter {Titre du premier chapitre}
+\thispagestyle {empty}
+Lorem ipsum dolor sit amet, consectetuer
+adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+sociis natoque penatibus et magnis dis parturient montes
+
+\section {Titre de la première section}
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
+mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
+semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem
+ante, dapibus in, viverra quis, feugiat a, Lorem ipsum dolor sit
+amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+parturient montes, nascetur ridiculus mus.
+
+Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+aliquet nec, vulputate eget, arcu.
+
+In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
+dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend
+tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend
+ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,
+
+\subsection {Titre de la première sous section}
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
+mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
+semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem
+ante, dapibus in, viverra quis, feugiat a,
+
+\subsubsection {Titre de la sous-section de la sous-section}
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+aliquet nec, vulputate eget, arcu.
+
+In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
+dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend
+tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend
+ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,
+
+\paragraph {Titre du premier paragraphe} \par
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+aliquet nec, vulputate eget, arcu.
+
+In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
+dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend
+tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend
+ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Donec quam felis,\cite{lecun2015deep} ultricies nec, pellentesque eu, pretium
+quis, sem. Nulla consequat massa quis enim. Donec pede justo,
+fringilla vel, aliquet nec, vulputate eget, arcu.
+
+In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
+dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend
+tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend
+ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,
+
+\subsection{Titre de la deuxième sous-section}
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+aliquet nec, vulputate eget, arcu.
+
+In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
+dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend
+tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend
+ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat
+a,%\gls{sample}
+
+
+\section{Titre de la deuxième section}
+
+
+
+\chapter {Titre du deuxième chapitre}
+\thispagestyle {empty} In enim justo, rhoncus ut, imperdiet a,
+venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
+consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in,
+viverra quis, feugiat a,%\gls{sample}
+
+\section {Comment faire un tableau?}
+
+\begin{table}[!h]
+    \renewcommand{\tablename}{Tab}
+    \centering
+    \smallskip
+    \begin{tabular}{|c|c|}
+        \hline
+            Région & Résultats \\
+        \hline \hline
+            Nord & 12 \\
+        \cline{2-2}
+            Sud & 13 \\
+        \hline
+            Total & 25 \\
+        \hline
+    \end{tabular}
+    \caption{Tableau Test\label{Tab1}}
+\end{table}
+
+\newpage
+\section{Comment insérer une figure?}
+
+
+
+\begin{figure} [!h]
+
+    \center
+    \includegraphics[scale=0.2]{image}
+    \caption{un exemple d'image
+    \label{image}}
+
+\end{figure}
+
+\section{Comment faire une référence à une figure ou un tableau?}
+
+C'est un pointeur vers ({figure~\ref{image} page~\pageref{image}).
+Consulter le code source pour voir comment on fait un référence à une figure.
+
+De même c'est pointeur vers ({Tab~\ref{Tab1} page~\pageref{Tab1})
+
+\section{Comment faire des listes?}
+
+\begin{itemize}
+    \item Quod cum itasit, paucae domus studiorum seriis cultibus antea
+    \item {celebratae  torpentis exundant, vocali sonu, perflabili tinnitu fidium resultantes. denique pro philosopho cantor et in locum oratoris
+    doctor artium ludicrarum accitur et bybliothecis sepulcrorum ritu in perpetuum clausis organa}
+    \item fabricantur hydraulica, et lyrae ad speciem carpentorum ingentes
+    \item tibiaeque et histrionici gestus instrumenta non levia.
+\end{itemize}
+
+\begin{enumerate}
+    \item Cum saepe multa, tum memini domi in hemicyclio sedentem, ut
+    \item solebat, cum et ego essem una et pauci admodum familiares, in
+    \item eum sermonem illum incidere qui tum forte multis erat in ore.
+\end{enumerate}
+
+\begin{description}
+    \item[description 1] Cum saepe multa, tum memini domi in hemicyclio sedentem, ut solebat, cum et ego essem una et pauci admodum familiares, in
+    \item[description 2] eum sermonem illum incidere qui tum forte multis erat in ore.
+\end{description}
+
+
+\section{comment faire une note de bas de page?}
+Pour voir comment faire une note de bas page voir le code
+source\footnote{c'est une note de bas de page}.
+
+\section{comment insérer une note dans la marge}
+
+Consulter le code source pour voir comment on a inséré cette note
+dans la marge \marginpar{ceci est une note dans la marge}
+
+\section{comment ajouter une entrée dans l'index?}
+
+Consulter le code source pour voir comment on a ajouté le mot
+\index{entrée 1} à l'index. N'oublier pas de consulter la fin du
+code source pour voir comment on a ajouté l'index. Pour plus
+d'explication surtout en ce qui concerne la compilation consulter la
+documentation de la tex ou l'un des enseignants responsables.
+
+\chapter {Titre du troisième chapitre}
+\thispagestyle {empty}
+
+
+\chapter {Titre du quatrième chapitre}
+\thispagestyle {empty}
+
+\printglossary[title=Glossaire]
+\addcontentsline{toc}{chapter}{Glossaire}
+
+\bibliographystyle{IEEEtran}
+\bibliography{rapport}
+\addcontentsline{toc}{chapter}{Bibliographie}
+
+\appendix
+\appendixpage
+\addappheadtotoc
+\chapter{Titre de la première annexe}
+\section{Première Section première annexe}
+
+\chapter{Titre de la deuxième annexe}
+\section{Première Section deuxième annexe}
+
+
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+\end {document}

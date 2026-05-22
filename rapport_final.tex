@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt,twoside]{report}
+\documentclass[a4paper,12pt]{report}
 \usepackage[english,french]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -12,6 +12,7 @@
 \usepackage[acronym]{glossaries}
 \usepackage{geometry}
 \usepackage[titletoc]{appendix}
+\usepackage[export]{adjustbox}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{amsmath}
@@ -65,60 +66,77 @@
 
 \begin{document}
 
+\newcommand{\bluefirst}[1]{\textcolor{blue}{#1}}
+
 \begin{titlepage}
+\newgeometry{top=1cm,left=1.5cm,bottom=1cm,right=1.5cm}
 
-\fontfamily{cmr} \selectfont
-
-\begin {center}
-
-
-        \IfFileExists{ump.png}{\includegraphics[scale=0.1]{ump}\hfill}{}
-        \LARGE Université Mohammed Premier\hfill
-        \IfFileExists{ump.png}{\includegraphics[scale=0.1]{ump}}{}\par
-        \Large École Nationale des Sciences Appliquées\par
-        \Large Oujda\vfill
-        \Large\textbf{Mémoire de Projet de Fin d'Année}\par
-        \large \textbf{Filière :} Management et Gouvernance des Systèmes d’Information\par
-        \textit {\textbf {Soutenu le :} xx/xx/2026}\par
-
-\end {center}
-
-        \vfill
+\noindent
 \begin{center}
-        \textbf {Réalisé par :}\bigskip
-
-           Zakariae OUAKRIM \par
-            
+    \includegraphics[width=0.2\linewidth,valign=c]{ump.png}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \textbf{ROYAUME DU MAROC}\\
+        \vspace{0.5\baselineskip}
+        \textbf{UNIVERSITE MOHAMMED PREMIER}\\
+        \vspace{0.5\baselineskip}
+        \textbf{\bluefirst{E}cole \bluefirst{N}ationale \bluefirst{d}es \bluefirst{S}ciences \bluefirst{A}ppliquées}\\
+        \vspace{0.5\baselineskip}
+        \textbf{Oujda - Maroc}
+    \end{minipage}
+    \hfill
+    \includegraphics[width=0.25\linewidth,valign=c]{ensa.png}
 \end{center}
 
+\vspace{1cm}
 
+\begin{center}
+    \textbf{{\fontsize{19pt}{22.8pt}\selectfont Mémoire de Projet de Fin d'Etudes}}
 
-        \vfill
+    \vspace{2cm}
 
-\begin {center}
+    {\fontsize{14}{17}\selectfont \textbf{Filière :} Management et Gouvernance des Systèmes d'Information}
 
-        \hrulefill\par
-        \LARGE Mise en œuvre d'un système de Maintenance Prédictive\par
-        \large Machine Learning \& Business Intelligence\par
-        \hrulefill\par
+    \vspace{1.5cm}
+    \hrule
+    \vspace{0.1cm}
+    \hrulefill\par
+    \vspace{0.5cm}
+    \LARGE Mise en œuvre d'un système de Maintenance Prédictive\par
+    \large Machine Learning \& Business Intelligence\par
+    \vspace{0.5cm}
+    \hrulefill
+    \vspace{0.1cm}
+    \hrule
+\end{center}
 
-\end {center}
+\vspace{1cm}
 
-        \vfill
+\begin{center}
+    \textbf {Réalisé par :}\bigskip
 
-        \textbf {Membres de jury :}\hfill\parbox[t]{4cm}{\textbf{Encadré par:\\}\textbf{M}. BARBOUCHA}\par
-        \textbf {M}. A. XYZ\par
-        \textbf {M}. A. XYZ\par
-        \textbf {M}. M. XYZ\par
+    Zakariae OUAKRIM\par
+\end{center}
 
-        \vfill
+\vspace{1cm}
 
+\textbf {Membres de jury :}\hfill\parbox[t]{6cm}{\textbf{Encadré par:\\}\textbf{M}. BARBOUCHA}\par
+\textbf {M}. A. XYZ\par
+\textbf {M}. A. XYZ\par
+\textbf {M}. M. XYZ\par
 
-\begin {center}
-    Année Universitaire 2025 - 2026
-\end {center}
+\vfill
+
+\begin{center}
+    \hrulefill\par
+    \vspace{0.5cm}
+    Année Universitaire\par
+    2025/2026
+\end{center}
 
 \end{titlepage}
+\restoregeometry
 
 \newpage
 \thispagestyle{empty}
@@ -268,6 +286,18 @@ TCO & Total Cost of Ownership (Coût total de possession) \\
 
 \newpage
 \tableofcontents
+
+\thispagestyle{empty}
+
+\newpage
+\listoffigures
+\addcontentsline{toc}{chapter}{Liste des figures}
+\thispagestyle{empty}
+
+\newpage
+\listoftables
+\addcontentsline{toc}{chapter}{Liste des tableaux}
+\thispagestyle{empty}
 
 \newpage
 
